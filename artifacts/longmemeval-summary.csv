@@ -1,0 +1,11 @@
+suite,method,question_type,n,accuracy,mean_answer_latency_s,mean_retrieval_latency_s,mean_query_latency_s,mean_answer_input_tokens,mean_graph_build_s_per_case,mean_graph_build_llm_calls_per_case
+longmemeval,full_history,knowledge-update,10,0.9,0.985,0.0,0.985,5764.4,14.284,11.5
+longmemeval,full_history,multi-session,10,0.9,0.935,0.0,0.935,5841.1,11.149,9.1
+longmemeval,full_history,temporal-reasoning,10,0.6,0.986,0.0,0.986,5210.8,14.179,11.5
+longmemeval,graphiti,knowledge-update,10,0.3,0.835,0.032,0.868,316.4,14.284,11.5
+longmemeval,graphiti,multi-session,10,0.2,0.835,0.048,0.883,232.3,11.149,9.1
+longmemeval,graphiti,temporal-reasoning,10,0.2,0.867,0.042,0.908,226.0,14.179,11.5
+longmemeval,no_temporal_metadata,knowledge-update,10,0.3,0.928,0.032,0.96,219.8,14.284,11.5
+longmemeval,no_temporal_metadata,multi-session,10,0.2,0.79,0.048,0.838,173.6,11.149,9.1
+longmemeval,no_temporal_metadata,temporal-reasoning,10,0.2,0.794,0.042,0.836,168.5,14.179,11.5
+

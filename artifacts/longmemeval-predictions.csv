@@ -1,0 +1,92 @@
+suite,case_id,question_type,method,question,gold,prediction,correct,retrieved_facts,input_tokens,latency_s
+longmemeval,5c40ec5b,knowledge-update,full_history,How many times have I met up with Alex from Germany?,We've met up twice.,Twice.,True,10,4854,0.995
+longmemeval,5c40ec5b,knowledge-update,graphiti,How many times have I met up with Alex from Germany?,We've met up twice.,Twice.,True,10,589,1.097
+longmemeval,5c40ec5b,knowledge-update,no_temporal_metadata,How many times have I met up with Alex from Germany?,We've met up twice.,Twice.,True,10,359,1.054
+longmemeval,031748ae,knowledge-update,full_history,How many engineers do I lead when I just started my new role as Senior Software Engineer? How many engineers do I lead now?,"When you just started your new role as Senior Software Engineer, you led 4 engineers. Now, you lead 5 engineers","When you just started your new role as Senior Software Engineer, you led 4 engineers. Now, you lead 5 engineers.",True,1,5344,1.558
+longmemeval,031748ae,knowledge-update,graphiti,How many engineers do I lead when I just started my new role as Senior Software Engineer? How many engineers do I lead now?,"When you just started your new role as Senior Software Engineer, you led 4 engineers. Now, you lead 5 engineers",UNKNOWN,False,1,161,1.018
+longmemeval,031748ae,knowledge-update,no_temporal_metadata,How many engineers do I lead when I just started my new role as Senior Software Engineer? How many engineers do I lead now?,"When you just started your new role as Senior Software Engineer, you led 4 engineers. Now, you lead 5 engineers",UNKNOWN,False,1,138,0.694
+longmemeval,45dc21b6,knowledge-update,full_history,How many of Emma's recipes have I tried out?,3,3,True,2,6365,0.85
+longmemeval,45dc21b6,knowledge-update,graphiti,How many of Emma's recipes have I tried out?,3,UNKNOWN,False,2,193,0.895
+longmemeval,45dc21b6,knowledge-update,no_temporal_metadata,How many of Emma's recipes have I tried out?,3,UNKNOWN,False,2,147,1.156
+longmemeval,e66b632c,knowledge-update,full_history,What was my previous personal best time for the charity 5K run?,27 minutes and 45 seconds,27 minutes and 45 seconds.,True,5,6539,1.278
+longmemeval,e66b632c,knowledge-update,graphiti,What was my previous personal best time for the charity 5K run?,27 minutes and 45 seconds,26 minutes and 30 seconds.,False,5,458,0.972
+longmemeval,e66b632c,knowledge-update,no_temporal_metadata,What was my previous personal best time for the charity 5K run?,27 minutes and 45 seconds,26 minutes and 30 seconds.,False,5,343,0.84
+longmemeval,0977f2af,knowledge-update,full_history,What new kitchen gadget did I invest in before getting the Air Fryer?,Instant Pot,Instant Pot,True,2,5889,1.084
+longmemeval,0977f2af,knowledge-update,graphiti,What new kitchen gadget did I invest in before getting the Air Fryer?,Instant Pot,UNKNOWN,False,2,231,0.722
+longmemeval,0977f2af,knowledge-update,no_temporal_metadata,What new kitchen gadget did I invest in before getting the Air Fryer?,Instant Pot,UNKNOWN,False,2,185,0.8
+longmemeval,50635ada,knowledge-update,full_history,What was my previous frequent flyer status on United Airlines before I got the current status?,Premier Silver,Premier Silver,True,3,5849,0.908
+longmemeval,50635ada,knowledge-update,graphiti,What was my previous frequent flyer status on United Airlines before I got the current status?,Premier Silver,UNKNOWN,False,3,274,0.634
+longmemeval,50635ada,knowledge-update,no_temporal_metadata,What was my previous frequent flyer status on United Airlines before I got the current status?,Premier Silver,UNKNOWN,False,3,205,1.118
+longmemeval,2698e78f,knowledge-update,full_history,"How often do I see my therapist, Dr. Smith?",every week,Weekly.,True,3,6046,1.016
+longmemeval,2698e78f,knowledge-update,graphiti,"How often do I see my therapist, Dr. Smith?",every week,Every week.,True,3,246,0.472
+longmemeval,2698e78f,knowledge-update,no_temporal_metadata,"How often do I see my therapist, Dr. Smith?",every week,Every week.,True,3,177,1.014
+longmemeval,a2f3aa27,knowledge-update,full_history,How many followers do I have on Instagram now?,1300,UNKNOWN,False,7,5406,0.907
+longmemeval,a2f3aa27,knowledge-update,graphiti,How many followers do I have on Instagram now?,1300,Close to 1300.,False,7,391,0.838
+longmemeval,a2f3aa27,knowledge-update,no_temporal_metadata,How many followers do I have on Instagram now?,1300,Close to 1300.,False,7,230,0.928
+longmemeval,6aeb4375_abs,knowledge-update,full_history,How many Italian restaurants have I tried in my city?,The information provided is not enough. You mentioned trying Korean restaurants but not Italian restaurants.,UNKNOWN,True,3,5178,0.745
+longmemeval,6aeb4375_abs,knowledge-update,graphiti,How many Italian restaurants have I tried in my city?,The information provided is not enough. You mentioned trying Korean restaurants but not Italian restaurants.,UNKNOWN,True,3,234,0.895
+longmemeval,6aeb4375_abs,knowledge-update,no_temporal_metadata,How many Italian restaurants have I tried in my city?,The information provided is not enough. You mentioned trying Korean restaurants but not Italian restaurants.,UNKNOWN,True,3,165,0.667
+longmemeval,9bbe84a2,knowledge-update,full_history,What was my previous goal for my Apex Legends level before I updated my goal?,level 100,Your previous goal was to reach level 100 before the end of the year.,True,6,6174,0.505
+longmemeval,9bbe84a2,knowledge-update,graphiti,What was my previous goal for my Apex Legends level before I updated my goal?,level 100,UNKNOWN,False,6,387,0.811
+longmemeval,9bbe84a2,knowledge-update,no_temporal_metadata,What was my previous goal for my Apex Legends level before I updated my goal?,level 100,UNKNOWN,False,6,249,1.006
+longmemeval,gpt4_85da3956,temporal-reasoning,full_history,How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?,3 weeks ago,UNKNOWN,False,1,2365,0.803
+longmemeval,gpt4_85da3956,temporal-reasoning,graphiti,How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?,3 weeks ago,UNKNOWN,False,1,166,0.863
+longmemeval,gpt4_85da3956,temporal-reasoning,no_temporal_metadata,How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?,3 weeks ago,UNKNOWN,False,1,143,1.073
+longmemeval,gpt4_ec93e27f,temporal-reasoning,full_history,"Which mode of transport did I use most recently, a bus or a train?",train,Train,True,1,5141,0.831
+longmemeval,gpt4_ec93e27f,temporal-reasoning,graphiti,"Which mode of transport did I use most recently, a bus or a train?",train,Train,True,1,161,0.831
+longmemeval,gpt4_ec93e27f,temporal-reasoning,no_temporal_metadata,"Which mode of transport did I use most recently, a bus or a train?",train,Train,True,1,138,0.648
+longmemeval,gpt4_68e94287,temporal-reasoning,full_history,"Which event happened first, my participation in the #PlankChallenge or my post about vegan chili recipe?",You posted a recipe for vegan chili on Instagram using the hashtag #FoodieAdventures first.,The post about vegan chili recipe happened first.,True,6,5800,1.188
+longmemeval,gpt4_68e94287,temporal-reasoning,graphiti,"Which event happened first, my participation in the #PlankChallenge or my post about vegan chili recipe?",You posted a recipe for vegan chili on Instagram using the hashtag #FoodieAdventures first.,UNKNOWN,False,6,391,0.912
+longmemeval,gpt4_68e94287,temporal-reasoning,no_temporal_metadata,"Which event happened first, my participation in the #PlankChallenge or my post about vegan chili recipe?",You posted a recipe for vegan chili on Instagram using the hashtag #FoodieAdventures first.,UNKNOWN,False,6,253,0.741
+longmemeval,4dfccbf8,temporal-reasoning,full_history,What did I do with Rachel on the Wednesday two months ago?,I started taking ukulele lessons with Rachel.,Started ukulele lessons with Rachel.,True,2,6394,0.802
+longmemeval,4dfccbf8,temporal-reasoning,graphiti,What did I do with Rachel on the Wednesday two months ago?,I started taking ukulele lessons with Rachel.,UNKNOWN,False,2,216,0.863
+longmemeval,4dfccbf8,temporal-reasoning,no_temporal_metadata,What did I do with Rachel on the Wednesday two months ago?,I started taking ukulele lessons with Rachel.,UNKNOWN,False,2,170,1.047
+longmemeval,gpt4_cd90e484,temporal-reasoning,full_history,How long did I use my new binoculars before I saw the American goldfinches returning to the area?,Two weeks,"Based on the memory, you saw the American goldfinches about a week before 2023/05/26, and you got your new binoculars exactly three weeks before 2023/05/26. So you had not yet gotten the new binoculars when you saw the goldfinches—they came about two weeks later.",False,2,6215,1.253
+longmemeval,gpt4_cd90e484,temporal-reasoning,graphiti,How long did I use my new binoculars before I saw the American goldfinches returning to the area?,Two weeks,UNKNOWN,False,2,226,0.905
+longmemeval,gpt4_cd90e484,temporal-reasoning,no_temporal_metadata,How long did I use my new binoculars before I saw the American goldfinches returning to the area?,Two weeks,UNKNOWN,False,2,180,0.37
+longmemeval,982b5123,temporal-reasoning,full_history,How many months ago did I book the Airbnb in San Francisco?,Five months ago,UNKNOWN,False,7,6097,0.619
+longmemeval,982b5123,temporal-reasoning,graphiti,How many months ago did I book the Airbnb in San Francisco?,Five months ago,UNKNOWN,False,7,402,0.831
+longmemeval,982b5123,temporal-reasoning,no_temporal_metadata,How many months ago did I book the Airbnb in San Francisco?,Five months ago,UNKNOWN,False,7,241,0.902
+longmemeval,gpt4_7bc6cf22,temporal-reasoning,full_history,How many days ago did I read the March 15th issue of The New Yorker?,12 days ago. 13 days (including the last day) is also acceptable.,18 days ago.,False,2,4275,1.006
+longmemeval,gpt4_7bc6cf22,temporal-reasoning,graphiti,How many days ago did I read the March 15th issue of The New Yorker?,12 days ago. 13 days (including the last day) is also acceptable.,UNKNOWN,False,2,192,0.983
+longmemeval,gpt4_7bc6cf22,temporal-reasoning,no_temporal_metadata,How many days ago did I read the March 15th issue of The New Yorker?,12 days ago. 13 days (including the last day) is also acceptable.,UNKNOWN,False,2,146,0.928
+longmemeval,5e1b23de,temporal-reasoning,full_history,How many months ago did I attend the photography workshop?,3,3 months ago,True,0,3639,0.944
+longmemeval,5e1b23de,temporal-reasoning,graphiti,How many months ago did I attend the photography workshop?,3,UNKNOWN,False,0,115,0.75
+longmemeval,5e1b23de,temporal-reasoning,no_temporal_metadata,How many months ago did I attend the photography workshop?,3,UNKNOWN,False,0,115,0.456
+longmemeval,2ebe6c90,temporal-reasoning,full_history,How many days did it take me to finish 'The Nightingale' by Kristin Hannah?,21 days. 22 days (including the last day) is also acceptable.,21 days,True,1,6089,1.171
+longmemeval,2ebe6c90,temporal-reasoning,graphiti,How many days did it take me to finish 'The Nightingale' by Kristin Hannah?,21 days. 22 days (including the last day) is also acceptable.,UNKNOWN,False,1,162,0.72
+longmemeval,2ebe6c90,temporal-reasoning,no_temporal_metadata,How many days did it take me to finish 'The Nightingale' by Kristin Hannah?,21 days. 22 days (including the last day) is also acceptable.,UNKNOWN,False,1,139,0.961
+longmemeval,982b5123_abs,temporal-reasoning,full_history,When did I book the Airbnb in Sacramento?,The information provided is not enough. You only mentioned booking Airbnb in San Francisco.,UNKNOWN,True,3,6093,1.24
+longmemeval,982b5123_abs,temporal-reasoning,graphiti,When did I book the Airbnb in Sacramento?,The information provided is not enough. You only mentioned booking Airbnb in San Francisco.,UNKNOWN,True,3,229,1.008
+longmemeval,982b5123_abs,temporal-reasoning,no_temporal_metadata,When did I book the Airbnb in Sacramento?,The information provided is not enough. You only mentioned booking Airbnb in San Francisco.,UNKNOWN,True,3,160,0.818
+longmemeval,73d42213,multi-session,full_history,What time did I reach the clinic on Monday?,9:00 AM,UNKNOWN,False,2,4954,1.103
+longmemeval,73d42213,multi-session,graphiti,What time did I reach the clinic on Monday?,9:00 AM,UNKNOWN,False,2,199,0.847
+longmemeval,73d42213,multi-session,no_temporal_metadata,What time did I reach the clinic on Monday?,9:00 AM,UNKNOWN,False,2,153,0.598
+longmemeval,61f8c8f8,multi-session,full_history,How much faster did I finish the 5K run compared to my previous year's time?,10 minutes,10 minutes faster (35 minutes vs. 45 minutes).,True,0,6007,0.867
+longmemeval,61f8c8f8,multi-session,graphiti,How much faster did I finish the 5K run compared to my previous year's time?,10 minutes,UNKNOWN,False,0,123,0.862
+longmemeval,61f8c8f8,multi-session,no_temporal_metadata,How much faster did I finish the 5K run compared to my previous year's time?,10 minutes,UNKNOWN,False,0,123,0.905
+longmemeval,a1cc6108,multi-session,full_history,How old was I when Alex was born?,11,"Based on the memory, you were 11 years old when Alex was born. You mentioned Alex is 21 and that you just turned 32 last month.",True,5,5961,0.848
+longmemeval,a1cc6108,multi-session,graphiti,How old was I when Alex was born?,11,UNKNOWN,False,5,311,1.119
+longmemeval,a1cc6108,multi-session,no_temporal_metadata,How old was I when Alex was born?,11,UNKNOWN,False,5,196,0.927
+longmemeval,0ea62687,multi-session,full_history,How much more miles per gallon was my car getting a few months ago compared to now?,2,2 miles per gallon (30 vs. 28).,True,1,6164,0.601
+longmemeval,0ea62687,multi-session,graphiti,How much more miles per gallon was my car getting a few months ago compared to now?,2,UNKNOWN,False,1,159,0.614
+longmemeval,0ea62687,multi-session,no_temporal_metadata,How much more miles per gallon was my car getting a few months ago compared to now?,2,UNKNOWN,False,1,136,0.803
+longmemeval,60159905,multi-session,full_history,How many dinner parties have I attended in the past month?,three,"Based on the memory, you mentioned three dinner parties you attended: Mike's BBQ (two weeks before 2023/05/21), Alex's potluck (yesterday relative to 2023/05/21), and Sarah's Italian feast (last week relative to 2023/05/30). That's 3 dinner parties in the past month.",True,5,6519,1.182
+longmemeval,60159905,multi-session,graphiti,How many dinner parties have I attended in the past month?,three,UNKNOWN,False,5,349,1.132
+longmemeval,60159905,multi-session,no_temporal_metadata,How many dinner parties have I attended in the past month?,three,UNKNOWN,False,5,234,0.952
+longmemeval,b3c15d39,multi-session,full_history,How many days did it take for me to receive the new remote shutter release after I ordered it?,5 days. 6 days (including the last day) is also acceptable.,5 days,True,2,5798,1.039
+longmemeval,b3c15d39,multi-session,graphiti,How many days did it take for me to receive the new remote shutter release after I ordered it?,5 days. 6 days (including the last day) is also acceptable.,5 days,True,2,213,0.949
+longmemeval,b3c15d39,multi-session,no_temporal_metadata,How many days did it take for me to receive the new remote shutter release after I ordered it?,5 days. 6 days (including the last day) is also acceptable.,5 days,True,2,167,0.686
+longmemeval,dd2973ad,multi-session,full_history,What time did I go to bed on the day before I had a doctor's appointment?,2 AM,2 AM,True,0,5639,0.729
+longmemeval,dd2973ad,multi-session,graphiti,What time did I go to bed on the day before I had a doctor's appointment?,2 AM,UNKNOWN,False,0,122,0.619
+longmemeval,dd2973ad,multi-session,no_temporal_metadata,What time did I go to bed on the day before I had a doctor's appointment?,2 AM,UNKNOWN,False,0,122,0.506
+longmemeval,2318644b,multi-session,full_history,How much more did I spend on accommodations per night in Hawaii compared to Tokyo?,$270,$270 more per night ($300+ in Maui vs. ~$30 in Tokyo).,True,0,7003,1.252
+longmemeval,2318644b,multi-session,graphiti,How much more did I spend on accommodations per night in Hawaii compared to Tokyo?,$270,UNKNOWN,False,0,120,0.669
+longmemeval,2318644b,multi-session,no_temporal_metadata,How much more did I spend on accommodations per night in Hawaii compared to Tokyo?,$270,UNKNOWN,False,0,120,0.693
+longmemeval,2311e44b_abs,multi-session,full_history,How many pages do I have left to read in 'Sapiens'?,The information provided is not enough. You did not mention how many paged do you have left to read in 'Sapiens'.,UNKNOWN,True,6,4988,0.95
+longmemeval,2311e44b_abs,multi-session,graphiti,How many pages do I have left to read in 'Sapiens'?,The information provided is not enough. You did not mention how many paged do you have left to read in 'Sapiens'.,UNKNOWN,True,6,388,0.687
+longmemeval,2311e44b_abs,multi-session,no_temporal_metadata,How many pages do I have left to read in 'Sapiens'?,The information provided is not enough. You did not mention how many paged do you have left to read in 'Sapiens'.,UNKNOWN,True,6,250,0.856
+longmemeval,e25c3b8d,multi-session,full_history,How much did I save on the designer handbag at TK Maxx?,$300,"$300 (originally $500, got it for $200).",True,5,5378,0.782
+longmemeval,e25c3b8d,multi-session,graphiti,How much did I save on the designer handbag at TK Maxx?,$300,UNKNOWN,False,5,339,0.851
+longmemeval,e25c3b8d,multi-session,no_temporal_metadata,How much did I save on the designer handbag at TK Maxx?,$300,UNKNOWN,False,5,235,0.975
+

@@ -1,0 +1,11 @@
+suite,method,question_type,n,accuracy,mean_answer_latency_s,mean_retrieval_latency_s,mean_query_latency_s,mean_answer_input_tokens,mean_graph_build_s_per_case,mean_graph_build_llm_calls_per_case
+synthetic,full_history,change-date,20,1.0,0.8,0.0,0.8,145.4,7.642,7.7
+synthetic,full_history,current,20,1.0,0.891,0.0,0.891,142.6,7.642,7.7
+synthetic,full_history,historical,20,1.0,0.827,0.0,0.827,144.2,7.642,7.7
+synthetic,graphiti,change-date,20,1.0,0.818,0.026,0.844,235.4,7.642,7.7
+synthetic,graphiti,current,20,1.0,0.913,0.027,0.939,232.6,7.642,7.7
+synthetic,graphiti,historical,20,1.0,0.82,0.027,0.846,234.2,7.642,7.7
+synthetic,no_temporal_metadata,change-date,20,0.0,0.776,0.026,0.802,131.1,7.642,7.7
+synthetic,no_temporal_metadata,current,20,1.0,0.878,0.027,0.905,128.2,7.642,7.7
+synthetic,no_temporal_metadata,historical,20,1.0,0.879,0.027,0.906,129.8,7.642,7.7
+

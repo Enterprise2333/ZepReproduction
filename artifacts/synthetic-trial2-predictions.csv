@@ -1,0 +1,182 @@
+suite,case_id,question_type,method,question,gold,prediction,correct,retrieved_facts,input_tokens,latency_s
+synthetic,synthetic-00-workplace,current,full_history,Which company does Maya work for now?,Harbor Studio,Harbor Studio,True,4,143,0.861
+synthetic,synthetic-00-workplace,current,graphiti,Which company does Maya work for now?,Harbor Studio,Harbor Studio,True,4,246,0.613
+synthetic,synthetic-00-workplace,current,no_temporal_metadata,Which company does Maya work for now?,Harbor Studio,Harbor Studio,True,4,134,0.564
+synthetic,synthetic-00-workplace,historical,full_history,Which company did Maya work for before the move?,Atlas Labs,Atlas Labs,True,4,145,0.598
+synthetic,synthetic-00-workplace,historical,graphiti,Which company did Maya work for before the move?,Atlas Labs,Atlas Labs,True,4,248,0.582
+synthetic,synthetic-00-workplace,historical,no_temporal_metadata,Which company did Maya work for before the move?,Atlas Labs,Atlas Labs,True,4,136,0.789
+synthetic,synthetic-00-workplace,change-date,full_history,On what date did Maya start working at Harbor Studio?,2024-04-03,2024-04-03,True,4,146,0.901
+synthetic,synthetic-00-workplace,change-date,graphiti,On what date did Maya start working at Harbor Studio?,2024-04-03,2024-04-03,True,4,249,1.024
+synthetic,synthetic-00-workplace,change-date,no_temporal_metadata,On what date did Maya start working at Harbor Studio?,2024-04-03,UNKNOWN,False,4,137,1.198
+synthetic,synthetic-01-workplace,current,full_history,Which company does Noah work for now?,Bluebird,Bluebird,True,4,143,0.503
+synthetic,synthetic-01-workplace,current,graphiti,Which company does Noah work for now?,Bluebird,Bluebird,True,4,239,0.848
+synthetic,synthetic-01-workplace,current,no_temporal_metadata,Which company does Noah work for now?,Bluebird,Bluebird,True,4,127,0.675
+synthetic,synthetic-01-workplace,historical,full_history,Which company did Noah work for before the move?,Northwind,Northwind,True,4,145,1.024
+synthetic,synthetic-01-workplace,historical,graphiti,Which company did Noah work for before the move?,Northwind,Northwind,True,4,241,0.818
+synthetic,synthetic-01-workplace,historical,no_temporal_metadata,Which company did Noah work for before the move?,Northwind,Northwind,True,4,129,0.919
+synthetic,synthetic-01-workplace,change-date,full_history,On what date did Noah start working at Bluebird?,2024-04-07,2024-04-07,True,4,146,0.546
+synthetic,synthetic-01-workplace,change-date,graphiti,On what date did Noah start working at Bluebird?,2024-04-07,2024-04-07,True,4,242,1.109
+synthetic,synthetic-01-workplace,change-date,no_temporal_metadata,On what date did Noah start working at Bluebird?,2024-04-07,UNKNOWN,False,4,130,0.757
+synthetic,synthetic-02-workplace,current,full_history,Which company does Leah work for now?,Lumen,Lumen,True,4,143,0.902
+synthetic,synthetic-02-workplace,current,graphiti,Which company does Leah work for now?,Lumen,Lumen,True,4,239,0.851
+synthetic,synthetic-02-workplace,current,no_temporal_metadata,Which company does Leah work for now?,Lumen,Lumen,True,4,127,1.052
+synthetic,synthetic-02-workplace,historical,full_history,Which company did Leah work for before the move?,Cedar Works,Cedar Works,True,4,145,0.949
+synthetic,synthetic-02-workplace,historical,graphiti,Which company did Leah work for before the move?,Cedar Works,Cedar Works,True,4,241,0.864
+synthetic,synthetic-02-workplace,historical,no_temporal_metadata,Which company did Leah work for before the move?,Cedar Works,Cedar Works,True,4,129,0.863
+synthetic,synthetic-02-workplace,change-date,full_history,On what date did Leah start working at Lumen?,2024-04-11,2024-04-11,True,4,146,0.788
+synthetic,synthetic-02-workplace,change-date,graphiti,On what date did Leah start working at Lumen?,2024-04-11,2024-04-11,True,4,242,0.534
+synthetic,synthetic-02-workplace,change-date,no_temporal_metadata,On what date did Leah start working at Lumen?,2024-04-11,UNKNOWN,False,4,130,0.497
+synthetic,synthetic-03-workplace,current,full_history,Which company does Owen work for now?,Orchid Tech,Orchid Tech,True,4,144,0.755
+synthetic,synthetic-03-workplace,current,graphiti,Which company does Owen work for now?,Orchid Tech,Orchid Tech,True,4,240,0.807
+synthetic,synthetic-03-workplace,current,no_temporal_metadata,Which company does Owen work for now?,Orchid Tech,Orchid Tech,True,4,128,0.809
+synthetic,synthetic-03-workplace,historical,full_history,Which company did Owen work for before the move?,Summit Data,Summit Data,True,4,146,0.901
+synthetic,synthetic-03-workplace,historical,graphiti,Which company did Owen work for before the move?,Summit Data,Summit Data,True,4,242,0.763
+synthetic,synthetic-03-workplace,historical,no_temporal_metadata,Which company did Owen work for before the move?,Summit Data,Summit Data,True,4,130,1.066
+synthetic,synthetic-03-workplace,change-date,full_history,On what date did Owen start working at Orchid Tech?,2024-04-15,2024-04-15,True,4,148,0.875
+synthetic,synthetic-03-workplace,change-date,graphiti,On what date did Owen start working at Orchid Tech?,2024-04-15,2024-04-15,True,4,244,0.822
+synthetic,synthetic-03-workplace,change-date,no_temporal_metadata,On what date did Owen start working at Orchid Tech?,2024-04-15,UNKNOWN,False,4,132,1.097
+synthetic,synthetic-04-residence,current,full_history,Which city does Iris live in now?,Cardiff,Cardiff,True,4,136,0.652
+synthetic,synthetic-04-residence,current,graphiti,Which city does Iris live in now?,Cardiff,Cardiff,True,4,226,0.835
+synthetic,synthetic-04-residence,current,no_temporal_metadata,Which city does Iris live in now?,Cardiff,Cardiff,True,4,125,1.163
+synthetic,synthetic-04-residence,historical,full_history,Which city did Iris live in before the move?,Bristol,Bristol,True,4,138,0.747
+synthetic,synthetic-04-residence,historical,graphiti,Which city did Iris live in before the move?,Bristol,Bristol,True,4,228,0.923
+synthetic,synthetic-04-residence,historical,no_temporal_metadata,Which city did Iris live in before the move?,Bristol,Bristol,True,4,127,0.946
+synthetic,synthetic-04-residence,change-date,full_history,On what date did Iris move to Cardiff?,2024-04-19,2024-04-19,True,4,137,0.803
+synthetic,synthetic-04-residence,change-date,graphiti,On what date did Iris move to Cardiff?,2024-04-19,2024-04-19,True,4,227,0.774
+synthetic,synthetic-04-residence,change-date,no_temporal_metadata,On what date did Iris move to Cardiff?,2024-04-19,UNKNOWN,False,4,126,0.833
+synthetic,synthetic-05-residence,current,full_history,Which city does Ethan live in now?,Portland,Portland,True,4,136,1.07
+synthetic,synthetic-05-residence,current,graphiti,Which city does Ethan live in now?,Portland,Portland,True,4,232,0.675
+synthetic,synthetic-05-residence,current,no_temporal_metadata,Which city does Ethan live in now?,Portland,Portland,True,4,120,1.011
+synthetic,synthetic-05-residence,historical,full_history,Which city did Ethan live in before the move?,Seattle,Seattle,True,4,138,0.697
+synthetic,synthetic-05-residence,historical,graphiti,Which city did Ethan live in before the move?,Seattle,Seattle,True,4,234,0.858
+synthetic,synthetic-05-residence,historical,no_temporal_metadata,Which city did Ethan live in before the move?,Seattle,Seattle,True,4,122,0.643
+synthetic,synthetic-05-residence,change-date,full_history,On what date did Ethan move to Portland?,2024-04-23,2024-04-23,True,4,137,0.961
+synthetic,synthetic-05-residence,change-date,graphiti,On what date did Ethan move to Portland?,2024-04-23,2024-04-23,True,4,233,1.146
+synthetic,synthetic-05-residence,change-date,no_temporal_metadata,On what date did Ethan move to Portland?,2024-04-23,UNKNOWN,False,4,121,0.796
+synthetic,synthetic-06-residence,current,full_history,Which city does Nina live in now?,Denver,Denver,True,4,136,0.505
+synthetic,synthetic-06-residence,current,graphiti,Which city does Nina live in now?,Denver,Denver,True,4,232,0.751
+synthetic,synthetic-06-residence,current,no_temporal_metadata,Which city does Nina live in now?,Denver,Denver,True,4,120,0.567
+synthetic,synthetic-06-residence,historical,full_history,Which city did Nina live in before the move?,Austin,Austin,True,4,138,0.921
+synthetic,synthetic-06-residence,historical,graphiti,Which city did Nina live in before the move?,Austin,Austin,True,4,234,0.606
+synthetic,synthetic-06-residence,historical,no_temporal_metadata,Which city did Nina live in before the move?,Austin,Austin,True,4,122,0.86
+synthetic,synthetic-06-residence,change-date,full_history,On what date did Nina move to Denver?,2024-04-27,2024-04-27,True,4,137,0.486
+synthetic,synthetic-06-residence,change-date,graphiti,On what date did Nina move to Denver?,2024-04-27,2024-04-27,True,4,233,1.012
+synthetic,synthetic-06-residence,change-date,no_temporal_metadata,On what date did Nina move to Denver?,2024-04-27,UNKNOWN,False,4,121,0.713
+synthetic,synthetic-07-residence,current,full_history,Which city does Felix live in now?,Bergen,Bergen,True,4,136,0.809
+synthetic,synthetic-07-residence,current,graphiti,Which city does Felix live in now?,Bergen,Bergen,True,4,232,1.048
+synthetic,synthetic-07-residence,current,no_temporal_metadata,Which city does Felix live in now?,Bergen,Bergen,True,4,120,0.717
+synthetic,synthetic-07-residence,historical,full_history,Which city did Felix live in before the move?,Oslo,Oslo,True,4,138,0.633
+synthetic,synthetic-07-residence,historical,graphiti,Which city did Felix live in before the move?,Oslo,Oslo,True,4,234,0.951
+synthetic,synthetic-07-residence,historical,no_temporal_metadata,Which city did Felix live in before the move?,Oslo,Oslo,True,4,122,0.676
+synthetic,synthetic-07-residence,change-date,full_history,On what date did Felix move to Bergen?,2024-05-01,2024-05-01,True,4,137,0.318
+synthetic,synthetic-07-residence,change-date,graphiti,On what date did Felix move to Bergen?,2024-05-01,2024-05-01,True,4,233,0.637
+synthetic,synthetic-07-residence,change-date,no_temporal_metadata,On what date did Felix move to Bergen?,2024-05-01,UNKNOWN,False,4,121,0.996
+synthetic,synthetic-08-project,current,full_history,Which project does Sara lead now?,Beacon,Project Beacon,True,4,136,1.045
+synthetic,synthetic-08-project,current,graphiti,Which project does Sara lead now?,Beacon,Project Beacon.,True,4,232,0.891
+synthetic,synthetic-08-project,current,no_temporal_metadata,Which project does Sara lead now?,Beacon,Project Beacon.,True,4,120,0.808
+synthetic,synthetic-08-project,historical,full_history,Which project did Sara lead before the change?,Aster,Project Aster,True,4,138,1.059
+synthetic,synthetic-08-project,historical,graphiti,Which project did Sara lead before the change?,Aster,Project Aster,True,4,234,0.701
+synthetic,synthetic-08-project,historical,no_temporal_metadata,Which project did Sara lead before the change?,Aster,Aster,True,4,122,0.784
+synthetic,synthetic-08-project,change-date,full_history,On what date did Sara begin leading project Beacon?,2024-05-05,2024-05-05,True,4,139,0.748
+synthetic,synthetic-08-project,change-date,graphiti,On what date did Sara begin leading project Beacon?,2024-05-05,2024-05-05,True,4,235,0.656
+synthetic,synthetic-08-project,change-date,no_temporal_metadata,On what date did Sara begin leading project Beacon?,2024-05-05,UNKNOWN,False,4,123,0.585
+synthetic,synthetic-09-project,current,full_history,Which project does Liam lead now?,Cobalt,Project Cobalt.,True,4,141,1.04
+synthetic,synthetic-09-project,current,graphiti,Which project does Liam lead now?,Cobalt,Project Cobalt.,True,4,237,0.932
+synthetic,synthetic-09-project,current,no_temporal_metadata,Which project does Liam lead now?,Cobalt,Project Cobalt.,True,4,125,0.629
+synthetic,synthetic-09-project,historical,full_history,Which project did Liam lead before the change?,Nimbus,Project Nimbus,True,4,143,0.875
+synthetic,synthetic-09-project,historical,graphiti,Which project did Liam lead before the change?,Nimbus,Project Nimbus,True,4,239,0.734
+synthetic,synthetic-09-project,historical,no_temporal_metadata,Which project did Liam lead before the change?,Nimbus,Nimbus,True,4,127,0.779
+synthetic,synthetic-09-project,change-date,full_history,On what date did Liam begin leading project Cobalt?,2024-05-09,2024-05-09,True,4,145,1.023
+synthetic,synthetic-09-project,change-date,graphiti,On what date did Liam begin leading project Cobalt?,2024-05-09,2024-05-09,True,4,241,0.663
+synthetic,synthetic-09-project,change-date,no_temporal_metadata,On what date did Liam begin leading project Cobalt?,2024-05-09,UNKNOWN,False,4,129,1.122
+synthetic,synthetic-10-project,current,full_history,Which project does Ava lead now?,Echo,Project Echo,True,4,136,0.659
+synthetic,synthetic-10-project,current,graphiti,Which project does Ava lead now?,Echo,Project Echo.,True,4,232,0.664
+synthetic,synthetic-10-project,current,no_temporal_metadata,Which project does Ava lead now?,Echo,Project Echo.,True,4,120,0.737
+synthetic,synthetic-10-project,historical,full_history,Which project did Ava lead before the change?,Delta,Project Delta,True,4,138,0.962
+synthetic,synthetic-10-project,historical,graphiti,Which project did Ava lead before the change?,Delta,Project Delta,True,4,234,0.475
+synthetic,synthetic-10-project,historical,no_temporal_metadata,Which project did Ava lead before the change?,Delta,Project Delta,True,4,122,0.907
+synthetic,synthetic-10-project,change-date,full_history,On what date did Ava begin leading project Echo?,2024-05-13,2024-05-13,True,4,139,0.675
+synthetic,synthetic-10-project,change-date,graphiti,On what date did Ava begin leading project Echo?,2024-05-13,2024-05-13,True,4,235,0.704
+synthetic,synthetic-10-project,change-date,no_temporal_metadata,On what date did Ava begin leading project Echo?,2024-05-13,UNKNOWN,False,4,123,0.979
+synthetic,synthetic-11-project,current,full_history,Which project does Kai lead now?,Willow,Project Willow,True,4,138,0.841
+synthetic,synthetic-11-project,current,graphiti,Which project does Kai lead now?,Willow,Project Willow.,True,4,234,1.145
+synthetic,synthetic-11-project,current,no_temporal_metadata,Which project does Kai lead now?,Willow,Willow,True,4,122,0.431
+synthetic,synthetic-11-project,historical,full_history,Which project did Kai lead before the change?,Quartz,Project Quartz,True,4,140,0.835
+synthetic,synthetic-11-project,historical,graphiti,Which project did Kai lead before the change?,Quartz,Project Quartz,True,4,236,0.849
+synthetic,synthetic-11-project,historical,no_temporal_metadata,Which project did Kai lead before the change?,Quartz,Project Quartz,True,4,124,0.428
+synthetic,synthetic-11-project,change-date,full_history,On what date did Kai begin leading project Willow?,2024-05-17,2024-05-17,True,4,141,0.754
+synthetic,synthetic-11-project,change-date,graphiti,On what date did Kai begin leading project Willow?,2024-05-17,2024-05-17,True,4,237,0.629
+synthetic,synthetic-11-project,change-date,no_temporal_metadata,On what date did Kai begin leading project Willow?,2024-05-17,UNKNOWN,False,4,125,1.088
+synthetic,synthetic-12-device,current,full_history,Which laptop does Emma use now?,MacBook Air,MacBook Air,True,3,149,0.91
+synthetic,synthetic-12-device,current,graphiti,Which laptop does Emma use now?,MacBook Air,MacBook Air,True,3,210,0.797
+synthetic,synthetic-12-device,current,no_temporal_metadata,Which laptop does Emma use now?,MacBook Air,MacBook Air,True,3,131,0.981
+synthetic,synthetic-12-device,historical,full_history,Which laptop did Emma use before the replacement?,ThinkPad X1,ThinkPad X1,True,3,151,1.113
+synthetic,synthetic-12-device,historical,graphiti,Which laptop did Emma use before the replacement?,ThinkPad X1,ThinkPad X1,True,3,212,1.005
+synthetic,synthetic-12-device,historical,no_temporal_metadata,Which laptop did Emma use before the replacement?,ThinkPad X1,ThinkPad X1,True,3,133,0.86
+synthetic,synthetic-12-device,change-date,full_history,On what date did Emma switch to the MacBook Air laptop?,2024-05-21,2024-05-21,True,3,155,0.833
+synthetic,synthetic-12-device,change-date,graphiti,On what date did Emma switch to the MacBook Air laptop?,2024-05-21,2024-05-21,True,3,216,0.79
+synthetic,synthetic-12-device,change-date,no_temporal_metadata,On what date did Emma switch to the MacBook Air laptop?,2024-05-21,UNKNOWN,False,3,137,0.543
+synthetic,synthetic-13-device,current,full_history,Which laptop does Theo use now?,ThinkPad T14,ThinkPad T14,True,4,148,0.866
+synthetic,synthetic-13-device,current,graphiti,Which laptop does Theo use now?,ThinkPad T14,ThinkPad T14,True,4,247,0.873
+synthetic,synthetic-13-device,current,no_temporal_metadata,Which laptop does Theo use now?,ThinkPad T14,ThinkPad T14,True,4,146,1.016
+synthetic,synthetic-13-device,historical,full_history,Which laptop did Theo use before the replacement?,Dell XPS,Dell XPS laptop,True,4,150,0.671
+synthetic,synthetic-13-device,historical,graphiti,Which laptop did Theo use before the replacement?,Dell XPS,Dell XPS laptop,True,4,249,0.823
+synthetic,synthetic-13-device,historical,no_temporal_metadata,Which laptop did Theo use before the replacement?,Dell XPS,Dell XPS laptop,True,4,148,0.987
+synthetic,synthetic-13-device,change-date,full_history,On what date did Theo switch to the ThinkPad T14 laptop?,2024-05-25,2024-05-25,True,4,155,0.927
+synthetic,synthetic-13-device,change-date,graphiti,On what date did Theo switch to the ThinkPad T14 laptop?,2024-05-25,2024-05-25,True,4,254,0.789
+synthetic,synthetic-13-device,change-date,no_temporal_metadata,On what date did Theo switch to the ThinkPad T14 laptop?,2024-05-25,UNKNOWN,False,4,153,1.062
+synthetic,synthetic-14-device,current,full_history,Which laptop does Zoe use now?,Framework 13,Framework 13,True,4,147,0.858
+synthetic,synthetic-14-device,current,graphiti,Which laptop does Zoe use now?,Framework 13,Framework 13,True,4,256,0.72
+synthetic,synthetic-14-device,current,no_temporal_metadata,Which laptop does Zoe use now?,Framework 13,Framework 13,True,4,144,1.01
+synthetic,synthetic-14-device,historical,full_history,Which laptop did Zoe use before the replacement?,MacBook Pro,MacBook Pro,True,4,149,0.731
+synthetic,synthetic-14-device,historical,graphiti,Which laptop did Zoe use before the replacement?,MacBook Pro,MacBook Pro,True,4,258,0.899
+synthetic,synthetic-14-device,historical,no_temporal_metadata,Which laptop did Zoe use before the replacement?,MacBook Pro,MacBook Pro,True,4,146,1.028
+synthetic,synthetic-14-device,change-date,full_history,On what date did Zoe switch to the Framework 13 laptop?,2024-05-29,2024-05-29,True,4,153,0.904
+synthetic,synthetic-14-device,change-date,graphiti,On what date did Zoe switch to the Framework 13 laptop?,2024-05-29,2024-05-29,True,4,262,0.811
+synthetic,synthetic-14-device,change-date,no_temporal_metadata,On what date did Zoe switch to the Framework 13 laptop?,2024-05-29,UNKNOWN,False,4,150,0.967
+synthetic,synthetic-15-device,current,full_history,Which laptop does Adam use now?,Dell Latitude,Dell Latitude,True,4,146,0.746
+synthetic,synthetic-15-device,current,graphiti,Which laptop does Adam use now?,Dell Latitude,Dell Latitude,True,4,245,1.008
+synthetic,synthetic-15-device,current,no_temporal_metadata,Which laptop does Adam use now?,Dell Latitude,Dell Latitude,True,4,144,0.477
+synthetic,synthetic-15-device,historical,full_history,Which laptop did Adam use before the replacement?,HP EliteBook,HP EliteBook,True,4,148,0.676
+synthetic,synthetic-15-device,historical,graphiti,Which laptop did Adam use before the replacement?,HP EliteBook,HP EliteBook,True,4,247,0.775
+synthetic,synthetic-15-device,historical,no_temporal_metadata,Which laptop did Adam use before the replacement?,HP EliteBook,HP EliteBook,True,4,146,1.034
+synthetic,synthetic-15-device,change-date,full_history,On what date did Adam switch to the Dell Latitude laptop?,2024-06-02,2024-06-02,True,4,151,0.986
+synthetic,synthetic-15-device,change-date,graphiti,On what date did Adam switch to the Dell Latitude laptop?,2024-06-02,2024-06-02,True,4,250,1.195
+synthetic,synthetic-15-device,change-date,no_temporal_metadata,On what date did Adam switch to the Dell Latitude laptop?,2024-06-02,UNKNOWN,False,4,149,1.109
+synthetic,synthetic-16-membership,current,full_history,Which gym is Ruby a member of now?,Hilltop,Hilltop gym,True,4,145,1.093
+synthetic,synthetic-16-membership,current,graphiti,Which gym is Ruby a member of now?,Hilltop,Hilltop gym.,True,4,209,0.706
+synthetic,synthetic-16-membership,current,no_temporal_metadata,Which gym is Ruby a member of now?,Hilltop,Hilltop gym,True,4,129,0.788
+synthetic,synthetic-16-membership,historical,full_history,Which gym did Ruby belong to before switching?,Riverside,Riverside gym,True,4,145,0.728
+synthetic,synthetic-16-membership,historical,graphiti,Which gym did Ruby belong to before switching?,Riverside,Riverside gym,True,4,209,0.766
+synthetic,synthetic-16-membership,historical,no_temporal_metadata,Which gym did Ruby belong to before switching?,Riverside,Riverside gym,True,4,129,0.943
+synthetic,synthetic-16-membership,change-date,full_history,On what date did Ruby join Hilltop gym?,2024-06-06,2024-06-06,True,4,146,0.975
+synthetic,synthetic-16-membership,change-date,graphiti,On what date did Ruby join Hilltop gym?,2024-06-06,2024-06-06,True,4,210,1.018
+synthetic,synthetic-16-membership,change-date,no_temporal_metadata,On what date did Ruby join Hilltop gym?,2024-06-06,UNKNOWN,False,4,130,0.997
+synthetic,synthetic-17-membership,current,full_history,Which gym is Milo a member of now?,Evergreen,Evergreen gym,True,4,147,0.766
+synthetic,synthetic-17-membership,current,graphiti,Which gym is Milo a member of now?,Evergreen,Evergreen gym.,True,4,243,0.904
+synthetic,synthetic-17-membership,current,no_temporal_metadata,Which gym is Milo a member of now?,Evergreen,Evergreen gym.,True,4,131,0.91
+synthetic,synthetic-17-membership,historical,full_history,Which gym did Milo belong to before switching?,Oakwood,Oakwood gym,True,4,147,0.738
+synthetic,synthetic-17-membership,historical,graphiti,Which gym did Milo belong to before switching?,Oakwood,Oakwood gym,True,4,243,1.131
+synthetic,synthetic-17-membership,historical,no_temporal_metadata,Which gym did Milo belong to before switching?,Oakwood,Oakwood gym,True,4,131,0.801
+synthetic,synthetic-17-membership,change-date,full_history,On what date did Milo join Evergreen gym?,2024-06-10,2024-06-10,True,4,148,0.752
+synthetic,synthetic-17-membership,change-date,graphiti,On what date did Milo join Evergreen gym?,2024-06-10,2024-06-10,True,4,244,1.014
+synthetic,synthetic-17-membership,change-date,no_temporal_metadata,On what date did Milo join Evergreen gym?,2024-06-10,UNKNOWN,False,4,132,1.124
+synthetic,synthetic-18-membership,current,full_history,Which gym is Lena a member of now?,Brookfield,Brookfield gym,True,4,147,0.639
+synthetic,synthetic-18-membership,current,graphiti,Which gym is Lena a member of now?,Brookfield,Brookfield gym.,True,4,243,0.814
+synthetic,synthetic-18-membership,current,no_temporal_metadata,Which gym is Lena a member of now?,Brookfield,Brookfield gym.,True,4,131,0.564
+synthetic,synthetic-18-membership,historical,full_history,Which gym did Lena belong to before switching?,Eastside,Eastside gym,True,4,147,0.495
+synthetic,synthetic-18-membership,historical,graphiti,Which gym did Lena belong to before switching?,Eastside,Eastside gym,True,4,243,1.016
+synthetic,synthetic-18-membership,historical,no_temporal_metadata,Which gym did Lena belong to before switching?,Eastside,Eastside gym,True,4,131,0.615
+synthetic,synthetic-18-membership,change-date,full_history,On what date did Lena join Brookfield gym?,2024-06-14,2024-06-14,True,4,148,0.505
+synthetic,synthetic-18-membership,change-date,graphiti,On what date did Lena join Brookfield gym?,2024-06-14,2024-06-14,True,4,244,1.053
+synthetic,synthetic-18-membership,change-date,no_temporal_metadata,On what date did Lena join Brookfield gym?,2024-06-14,UNKNOWN,False,4,132,1.03
+synthetic,synthetic-19-membership,current,full_history,Which gym is Aria a member of now?,Crosstown,Crosstown gym,True,4,154,0.858
+synthetic,synthetic-19-membership,current,graphiti,Which gym is Aria a member of now?,Crosstown,Crosstown gym,True,4,219,0.874
+synthetic,synthetic-19-membership,current,no_temporal_metadata,Which gym is Aria a member of now?,Crosstown,Crosstown gym,True,4,139,0.642
+synthetic,synthetic-19-membership,historical,full_history,Which gym did Aria belong to before switching?,Seaview,Seaview gym,True,4,154,0.996
+synthetic,synthetic-19-membership,historical,graphiti,Which gym did Aria belong to before switching?,Seaview,Seaview gym,True,4,219,0.61
+synthetic,synthetic-19-membership,historical,no_temporal_metadata,Which gym did Aria belong to before switching?,Seaview,Seaview gym,True,4,139,0.493
+synthetic,synthetic-19-membership,change-date,full_history,On what date did Aria join Crosstown gym?,2024-06-18,2024-06-18,True,4,155,0.928
+synthetic,synthetic-19-membership,change-date,graphiti,On what date did Aria join Crosstown gym?,2024-06-18,2024-06-18,True,4,220,0.732
+synthetic,synthetic-19-membership,change-date,no_temporal_metadata,On what date did Aria join Crosstown gym?,2024-06-18,UNKNOWN,False,4,140,0.739
+
