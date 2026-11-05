@@ -1,0 +1,5 @@
+# Install the pinned Graphiti snapshot with: pip install -e "graphiti[kuzu]"
+fastembed==0.7.3
+httpx==0.28.1
+python-dotenv==1.1.1
+
