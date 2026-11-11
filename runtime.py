@@ -25,11 +25,11 @@ MODEL = os.getenv("DEEPSEEK_MODEL", "deepseek-chat")
 
 
 class LocalEmbedder(EmbedderClient):
-    def __init__(self):
+    def __init__(self, cache_dir=None, allow_download=False):
         self.model = TextEmbedding(
             model_name="BAAI/bge-small-en-v1.5",
-            cache_dir=str(ROOT / "model_cache"),
-            local_files_only=True,
+            cache_dir=str(cache_dir or ROOT / "model_cache"),
+            local_files_only=not allow_download,
         )
 
     async def create(self, input_data):
@@ -110,4 +110,3 @@ async def prepare_graph(graph: Graphiti):
 
 def answer_client():
     return AsyncOpenAI(api_key=require_key(), base_url="https://api.deepseek.com/v1")
-
