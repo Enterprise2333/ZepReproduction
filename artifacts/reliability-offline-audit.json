@@ -1,0 +1,34 @@
+[
+  {
+    "run": "20261105-100527-synthetic",
+    "rows": 180,
+    "duplicate_keys": 0,
+    "errors": 0,
+    "scoring_changes": [],
+    "judge_raw_available": null
+  },
+  {
+    "run": "20261105-102247-synthetic",
+    "rows": 180,
+    "duplicate_keys": 0,
+    "errors": 0,
+    "scoring_changes": [],
+    "judge_raw_available": null
+  },
+  {
+    "run": "20261105-103305-synthetic",
+    "rows": 180,
+    "duplicate_keys": 0,
+    "errors": 0,
+    "scoring_changes": [],
+    "judge_raw_available": null
+  },
+  {
+    "run": "20261105-101232-longmemeval",
+    "rows": 90,
+    "duplicate_keys": 0,
+    "errors": 0,
+    "scoring_changes": [],
+    "judge_raw_available": false
+  }
+]

@@ -1,81 +1,53 @@
-# A partial reproduction of Zep's temporal agent memory
+# Zep temporal memory: a partial reproduction and controlled modification
 
-**Project:** FTEC5660 Reproducibility Work, paper 12  
-**Paper:** Rasmussen et al., *Zep: A Temporal Knowledge Graph Architecture for Agent Memory* (2025)  
-**Code:** getzep/graphiti, snapshot `fb60e59d4a208c99e7d0186ee6335d2a257f17f2`, version 0.31.2
+FTEC5660 individual reproducibility project, paper 12. Authors' paper: Rasmussen et al., [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956). Authors' open-source implementation: [Graphiti](https://github.com/getzep/graphiti), pinned to `fb60e59d4a208c99e7d0186ee6335d2a257f17f2` (graphiti-core 0.31.2). Our code and outputs: [Enterprise2333/ZepReproduction](https://github.com/Enterprise2333/ZepReproduction).
 
-## 1. Target and summary
+## Target and conclusion
 
-I tested one concrete claim: dated conversation episodes can be turned into facts whose validity intervals preserve both a user's old and new state. I also measured whether those facts help answer questions compared with supplying the full conversation. The isolated modification removed `valid_at` and `invalid_at` from the *same* retrieved facts, leaving every other part of the answer pipeline unchanged.
+I reproduced one claimed capability: dated conversation episodes can yield old and new knowledge-graph facts with validity intervals, which help answer temporal questions. I then tested one modification: writing each LongMemEval message as a separate episode instead of writing each entire session as one episode. On a fixed 30-question LongMemEval Oracle subset, the three-trial mean accuracy of the dated graph rose from **26.67% to 66.67%**. Graph construction calls rose from about **308 to 4,522 per trial**. The full-history answer scored around 72-73%, so the modified graph still did not surpass it in this setting.
 
-The local synthetic behavior reproduces the temporal mechanism: Graphiti retains the old fact with an invalidation date and a new valid fact. However, on a 30-question public LongMemEval Oracle subset, this simplified implementation does not reproduce the paper's accuracy advantage over full context. This is informative negative evidence under materially different models, data, and ingestion granularity.
+The paper's published LongMemEval-S accuracy gain is not numerically reproduced here. The data, models and retrieval pipeline are materially different. The result supports a narrower claim: ingestion granularity strongly affects what the temporal graph remembers in this local setup.
 
-## 2. System and setup
+## System and setup
 
-The authors' open-source Graphiti engine ingests a dated episode, extracts entities and relation facts, resolves them against the existing graph, and records fact validity intervals. Search then returns relevant facts for a downstream answer model. I installed the authors' Python source snapshot without changing its source. I used DeepSeek's OpenAI-compatible chat API for extraction, resolution, answering, and public-data judging. The environment is Windows with Python 3.12, Kuzu 0.11.3 embedded graph storage, and a locally cached BAAI/bge-small-en-v1.5 embedding model (384 dimensions). DeepSeek decoding used model `deepseek-chat`, base URL `https://api.deepseek.com/v1`, temperature 0, up to 4096 output tokens for Graphiti operations and 128 for short answers.
+The pipeline runs the pinned Graphiti source, not a reimplementation. It extracts and resolves entities and relation facts from dated episodes, stores the temporal graph in local Kuzu 0.11.3, retrieves the top 10 relation facts by Graphiti's default search, then asks DeepSeek to answer. Graph operations, answers and automatic judging use `deepseek-chat` through the OpenAI-compatible endpoint `https://api.deepseek.com/v1`; the embedding model is the locally cached `BAAI/bge-small-en-v1.5` with 384 dimensions. Python 3.12 was used. The answer and judge use temperature 0, top_p 1 and output limits of 128 and 50 tokens respectively. Graph construction uses temperature 0 and a 4096-token output limit; top_p is omitted and follows the provider default. The same answer and judge prompts are used in both conditions. The model name is a provider alias, not an immutable model revision.
 
-The original paper used the Zep service, Neo4j, GPT-4o-mini for graph building, GPT-4o-mini/GPT-4o for answering, and BGE-m3 for embeddings and reranking. My edge-only search uses Graphiti's reciprocal-rank-fusion default with top 10 facts; no community summaries are built. Consequently the absolute scores and latency numbers below are **not directly comparable** to the paper's results.
+The original paper used the Zep service, Neo4j, BGE-m3, and GPT-4o family models, with fuller entity/community retrieval. Its reported LongMemEval-S GPT-4o-mini example was 55.4% for full context and 63.8% for Zep, with roughly 115k versus 1.6k answer-context tokens. Those figures are reference points only. Our public data is the Oracle variant, which supplies relevant sessions, and was restricted to 10 questions each from knowledge-update, temporal-reasoning and multi-session (30 total), selected with seed 5660 and a 30,000-character source ceiling. The selected IDs and data hash are in the manifests. Gold answers and `has_answer` labels do not enter graph construction or answer prompts.
 
-## 3. Data and method
+The full-history baseline receives the original dated sessions in both conditions. Session ingestion writes 57 episodes across the 30 cases; message ingestion writes 650 episodes, keeping both user and assistant roles. Every message inherits its session timestamp, keeps its original order and gets no artificial time offset. Both graph conditions use a fresh database per case. Graphiti's default recent-episode context remains unchanged; changing episode size also changes how many original messages that window covers. This is a limitation of isolating the intervention, although no parameter was tuned between conditions.
 
-The first dataset contains 20 deterministic two-episode synthetic conversations across workplace, residence, project, device, and membership changes. Each case has three questions: current state, previous state, and the exact date of the change. The episode body omits the date; the timestamp is supplied as episode metadata. Ground truth is written by the case generator, so it cannot leak from the evaluation label into graph construction. There are 60 questions per method. The synthetic scorer matches normalized entities and parses calendar dates.
+## Metrics and experimental controls
 
-The public dataset is the LongMemEval **Oracle** JSON, which supplies relevant sessions for each question. I selected 10 questions from each of knowledge-update, temporal-reasoning, and multi-session, using seed 5660 among cases whose combined session text did not exceed 30,000 characters. Sessions are ingested in timestamp order, one episode per session. The original paper used LongMemEval-S with much longer full histories and a different ingestion/evaluation setup. For this local subset, a DeepSeek judge marks whether a predicted answer is factually equivalent to the reference; questions, references, predictions, and contexts are retained for audit. No `has_answer` flags or gold answers enter the graph or answer prompts.
+Each of three trials evaluated the same 30 public questions under three answer contexts: full history; top-10 graph facts with `valid_at` and `invalid_at`; and the same graph facts with only those date fields hidden at answer time. The latter is a context-metadata ablation, not a graph-without-time implementation. Accuracy uses all planned questions. We separately report 27 answerable and 3 abstention questions, mean accuracy and sample standard deviation across trials, plus paired wrong-to-right and right-to-wrong changes. Public answers use a DeepSeek factual-equivalence judge with strict JSON boolean parsing; raw judgments are retained locally. A fully blinded human adjudication was not performed. Repeating the same 30 questions three times measures run variation, not population uncertainty from 90 independent questions.
 
-For every question, the same answer model and prompt receive one of three contexts:
+## Results
 
-1. **Full history:** all dated conversation episodes.
-2. **Graphiti:** the top 10 retrieved facts and `valid_at`/`invalid_at` fields.
-3. **No temporal metadata:** the identical retrieved facts, with just those date fields removed.
+| Ingestion | Answer context | All 30 per trial, mean (SD pp) | Answerable 27, mean (SD pp) |
+|---|---|---:|---:|
+| Session | Full history | 72.22% (1.92) | 69.14% (2.14) |
+| Session | Dated graph | 26.67% (3.33) | 18.52% (3.70) |
+| Session | Graph without displayed dates | 23.33% (0.00) | 14.81% (0.00) |
+| Message | Full history | 73.33% (0.00) | 70.37% (0.00) |
+| Message | Dated graph | 66.67% (5.77) | 62.96% (6.42) |
+| Message | Graph without displayed dates | 51.11% (1.92) | 45.68% (2.14) |
 
-The principal metric is accuracy (correct answers divided by evaluated answers). I also record answer input tokens, answer latency, graph search latency, graph build time, and Graphiti LLM calls. Graph ingestion cost is separate from per-question answering cost. Each case has its own database, and every raw prediction is written to JSONL immediately after the case.
+All three abstention questions were scored correct under every method and trial. For the dated graph, the message modification improved 14, 13 and 11 paired questions across the three trials, while 1, 1 and 0 previously correct questions regressed. Thus the 40.00 percentage-point overall gain does not mean every item improved. The full-history difference between modes, despite identical context, illustrates model/judge variation and the mutable model alias; it should not be attributed to ingestion. The dated-message graph beats its own no-date answer context by 15.56 points on average, but both use the same underlying temporal graph.
 
-## 4. Results
+| Graph construction per 30-case trial | Session mean | Message mean |
+|---|---:|---:|
+| Graphiti LLM calls | 308 | 4,522 |
+| Build time | 373 s (6.2 min) | 4,860 s (81.0 min) |
 
-### 4.1 Original reported result and comparability
+The message condition used about 14.7 times as many graph-building calls and 13.0 times as much recorded construction time. Parallel trial work shared the same host and API, so elapsed time is descriptive rather than an isolated speed benchmark. Query latency excludes graph construction and judging. Construction is shared by the dated and no-date answer contexts and must not be counted twice. Character telemetry for graph LLM calls is not billable token usage, so no currency cost is inferred. Per-run answer tokens, judge tokens, time and calls are in `artifacts/formal-granularity-summary.json`.
 
-In the paper's LongMemEval-S experiment, GPT-4o-mini with full context scored 55.4% versus 63.8% for Zep, with average answer context of roughly 115k versus 1.6k tokens. These values are reference points only. The Oracle subset, model, database, embedding model, retrieval context, and scoring judge in this project differ from that experiment.
+## Case analysis and edge cases
 
-### 4.2 Synthetic temporal behavior
+The three-question diagnostic pilot was intentionally selected from prior failures. Its 0/3 to 3/3 graph improvement is not mixed into the formal score. In the formal runs, the Emma recipe-count question (45dc21b6) and previous 5K best time (e66b632c) changed from wrong to right in all three trials. The engineers update (031748ae) changed from wrong to right in only one trial: the other two message runs knew the current five-person count but did not answer both old and new counts. This is a remaining extraction/retrieval variability issue.
 
-| Method | Current state (n=20) | Historical state (n=20) | Change date (n=20) | Mean answer input tokens |
-|---|---:|---:|---:|---:|
-| Full history | 20/20 | 20/20 | 20/20 | ~144 |
-| Graphiti + validity dates | 20/20 | 20/20 | 20/20 | ~234 |
-| Same facts without dates | 20/20 | 20/20 | 0/20 | ~130 |
+Two regressions deserve attention. In trial 1 the question with gold answer 1300 (a2f3aa27) changed from the session answer "Nearly 1300" (judged correct) to message answer "1250" (incorrect). In trial 2 a transport question (gpt4_ec93e27f) changed from "Train" to "Bus". The numerical example also illustrates automatic-judge sensitivity to approximation; the prior evaluation judged "Close to 1300" differently. We retained the recorded judgments rather than silently overriding them.
 
-The 20/20 to 0/20 change-date drop is the measured effect of removing only date fields. It shows that the graph's temporal metadata reaches the answer stage. I repeated all 20 cases three times at temperature 0; all nine method-by-question-type accuracies were identical in every trial (observed standard deviation 0 percentage points). This repeated result is conditional on the same easy questions and does not establish performance on broader conversations. The full-history baseline is equally accurate and uses fewer answer tokens on these deliberately short cases; no efficiency improvement is claimed here. A two-event smoke test additionally showed an old employer fact invalidated on the new employer's start date.
+Operational edge cases handled in the code: explicit first-use embedding download and offline readiness check; Kuzu full-text index setup; one database per case to avoid `group_id` incompatibility and cross-case leakage; baseline execution independent of graph failures; strict boolean judge parsing with raw responses retained; complete planned-answer denominators and coverage/error metrics; and a distinction between unknown invalidation time and confirmed current validity. The original source is unchanged. The model/data hashes, prompts, selected question IDs, per-case sources and predictions remain auditable. The historical 20-case synthetic test also confirms that date answers fall from 20/20 to 0/20 when answer-time date fields are hidden, across three trials, but these cases are deliberately simple.
 
-### 4.3 LongMemEval Oracle subset
+## Limits and recommendations
 
-| Method | Knowledge update (n=10) | Temporal reasoning (n=10) | Multi-session (n=10) | Overall | Mean answer input tokens | Mean retrieval + answer latency |
-|---|---:|---:|---:|---:|---:|---:|
-| Full history | 9/10 | 6/10 | 9/10 | 24/30 (80.0%) | 5,605 | 0.969 s |
-| Graphiti + validity dates | 3/10 | 2/10 | 2/10 | 7/30 (23.3%) | 258 | 0.886 s |
-| Same facts without dates | 3/10 | 2/10 | 2/10 | 7/30 (23.3%) | 187 | 0.878 s |
-
-Three questions are abstention questions whose reference answer says the information is insufficient. All three methods answered those correctly. Among the 27 answerable questions, the full-history baseline scored 21/27 and both graph conditions scored 4/27. Thus the aggregate graph score must not be read as successful retrieval on seven factual questions.
-
-The graph condition cut answer prompt size by about 95.4%, but lost 56.7 accuracy points against full history. Its local query time was only about 0.08 s shorter on average; this figure excludes graph construction. Graph building took roughly 13.2 s and 10.7 DeepSeek calls per case on average, whereas the full-history baseline needs no graph build. The no-date ablation made no accuracy difference on this subset. This likely reflects a more basic bottleneck: answer-bearing facts were often absent from the retrieved edges, so temporal metadata could not help. For example, one knowledge-update question asked whether the user led four engineers initially and five now; the retrieved context only said that the user held a new Senior Software Engineer role, yielding `UNKNOWN`. Another question asked the price per mug; the full-history answer was $12 while the graph answer was `UNKNOWN`.
-
-All 90 predictions completed without execution errors. The scores use one run of the 30-question subset. The public judge is itself an LLM and can make mistakes; raw gold answers, predictions, and contexts remain in `results/20261105-101232-longmemeval/predictions.jsonl` for manual review. The fixed seed, selection rule, and IDs are in that run's manifest.
-
-## 5. Debug diary
-
-- GitHub's ordinary clone endpoint timed out; GitHub's source archive API supplied a pinned snapshot.
-- Docker and WSL were unavailable. Kuzu provided an embedded database, but upstream marks that backend deprecated.
-- In Graphiti 0.31.2, `KuzuDriver.build_indices_and_constraints()` is a no-op even though full-text search expects those indexes. Calling the Kuzu maintenance operation directly created them.
-- The current episode path also accesses a driver `_database` attribute that Kuzu lacks when a `group_id` is passed. A separate database per case avoids `group_id` and prevents cross-case contamination.
-- The current source imports `httpx` without declaring it as a direct dependency; I installed it explicitly and pinned it in `requirements.txt`.
-- The default Hugging Face endpoint was unreachable, so the embedding model was downloaded once through a mirror and then run from the local cache.
-
-## 6. Limits and conclusion
-
-This study demonstrates the intended temporal fact lifecycle and an isolated metadata ablation, but does not validate the paper's headline LongMemEval-S numbers. In the public subset, session-level ingestion compresses multiple messages into one episode, which can discard small answer-bearing details. The smaller embedding model, edge-only retrieval, Oracle selection, and different LLM/automatic judge also change the task. The synthetic cases are deliberately easy: the dates are present in metadata and each case has only two events. A larger follow-up should ingest individual messages, use the paper's exact split and prompts, include entity/community context, and repeat trials with manual review of judge disagreements. The raw outputs make those changes auditable.
-
-## References
-
-1. Rasmussen et al., [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956), 2025.
-2. Authors' [Graphiti repository](https://github.com/getzep/graphiti), pinned to the snapshot above.
-3. [LongMemEval cleaned dataset](https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned).
-
+The measured improvement is specific to this Oracle subset, DeepSeek, local Kuzu, BGE-small and top-10 relation-only retrieval. Message-level writing costs far more graph calls, and the full-history answer remains slightly more accurate on these short relevant histories. A larger reproduction would pin an immutable model revision, use the paper's LongMemEval-S split and prompt protocol, add entity/community context, log exact construction token usage, and review judge disagreements with a human. Future users should verify the embedding cache, Kuzu indexes, data hash and selected IDs before comparing scores. The companion [presentation outline](PRESENTATION.md) uses the complete formal results.

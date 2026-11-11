@@ -1,0 +1,434 @@
+{
+  "accepted": [
+    {
+      "run": "20261108-081508-v2-673fb819-synthetic",
+      "suite": "synthetic",
+      "errors": 0
+    },
+    {
+      "run": "20261108-081818-v2-7a3f6b88-longmemeval",
+      "suite": "longmemeval",
+      "errors": 0
+    },
+    {
+      "run": "20261108-082746-v2-356b7a99-synthetic",
+      "suite": "synthetic",
+      "errors": 0
+    },
+    {
+      "run": "20261108-083305-v2-ef25e6f5-longmemeval",
+      "suite": "longmemeval",
+      "errors": 0
+    },
+    {
+      "run": "20261108-084242-v2-2813f162-synthetic",
+      "suite": "synthetic",
+      "errors": 0
+    },
+    {
+      "run": "20261108-084808-v2-759cd0aa-longmemeval",
+      "suite": "longmemeval",
+      "errors": 0
+    }
+  ],
+  "excluded": [
+    {
+      "run": "20261108-081249-v2-2cdf6b03-synthetic",
+      "reason": "implementation changed during validation; excluded"
+    }
+  ],
+  "results": [
+    {
+      "suite": "longmemeval",
+      "method": "full_history",
+      "stratum": "abstention",
+      "trials": 3,
+      "n_per_trial": 3,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "full_history",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 30,
+      "mean_accuracy": 0.7,
+      "sample_sd": 0.033333333333333326,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "full_history",
+      "stratum": "answerable",
+      "trials": 3,
+      "n_per_trial": 27,
+      "mean_accuracy": 0.6666666666666666,
+      "sample_sd": 0.037037037037037035,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "graphiti",
+      "stratum": "abstention",
+      "trials": 3,
+      "n_per_trial": 3,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "graphiti",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 30,
+      "mean_accuracy": 0.26666666666666666,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "graphiti",
+      "stratum": "answerable",
+      "trials": 3,
+      "n_per_trial": 27,
+      "mean_accuracy": 0.18518518518518517,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "no_temporal_metadata",
+      "stratum": "abstention",
+      "trials": 3,
+      "n_per_trial": 3,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "no_temporal_metadata",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 30,
+      "mean_accuracy": 0.23333333333333334,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "longmemeval",
+      "method": "no_temporal_metadata",
+      "stratum": "answerable",
+      "trials": 3,
+      "n_per_trial": 27,
+      "mean_accuracy": 0.14814814814814814,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "full_history",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 60,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "full_history",
+      "stratum": "change-date",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "full_history",
+      "stratum": "current",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "full_history",
+      "stratum": "historical",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "graphiti",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 60,
+      "mean_accuracy": 0.9944444444444445,
+      "sample_sd": 0.009622504486493792,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "graphiti",
+      "stratum": "change-date",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "graphiti",
+      "stratum": "current",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 0.9833333333333333,
+      "sample_sd": 0.028867513459481315,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "graphiti",
+      "stratum": "historical",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "no_temporal_metadata",
+      "stratum": "all",
+      "trials": 3,
+      "n_per_trial": 60,
+      "mean_accuracy": 0.6666666666666666,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "no_temporal_metadata",
+      "stratum": "change-date",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 0.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "no_temporal_metadata",
+      "stratum": "current",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    },
+    {
+      "suite": "synthetic",
+      "method": "no_temporal_metadata",
+      "stratum": "historical",
+      "trials": 3,
+      "n_per_trial": 20,
+      "mean_accuracy": 1.0,
+      "sample_sd": 0.0,
+      "min_scoring_coverage": 1.0
+    }
+  ],
+  "costs": [
+    {
+      "run": "20261108-081508-v2-673fb819-synthetic",
+      "method": "full_history",
+      "answer_input_tokens": 8823,
+      "answer_output_tokens": 233,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.7431333333333333
+    },
+    {
+      "run": "20261108-081508-v2-673fb819-synthetic",
+      "method": "graphiti",
+      "answer_input_tokens": 14421,
+      "answer_output_tokens": 239,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 153.251,
+      "graph_build_calls": 158,
+      "mean_query_seconds": 0.7942833333333333
+    },
+    {
+      "run": "20261108-081508-v2-673fb819-synthetic",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 8025,
+      "answer_output_tokens": 154,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 153.251,
+      "graph_build_calls": 158,
+      "mean_query_seconds": 0.7799833333333334
+    },
+    {
+      "run": "20261108-081818-v2-7a3f6b88-longmemeval",
+      "method": "full_history",
+      "answer_input_tokens": 168253,
+      "answer_output_tokens": 235,
+      "judge_total_tokens": 3228,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.8793333333333333
+    },
+    {
+      "run": "20261108-081818-v2-7a3f6b88-longmemeval",
+      "method": "graphiti",
+      "answer_input_tokens": 7175,
+      "answer_output_tokens": 105,
+      "judge_total_tokens": 3093,
+      "graph_build_seconds": 379.402,
+      "graph_build_calls": 293,
+      "mean_query_seconds": 0.8103666666666667
+    },
+    {
+      "run": "20261108-081818-v2-7a3f6b88-longmemeval",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 5312,
+      "answer_output_tokens": 78,
+      "judge_total_tokens": 3065,
+      "graph_build_seconds": 379.402,
+      "graph_build_calls": 293,
+      "mean_query_seconds": 0.7622333333333333
+    },
+    {
+      "run": "20261108-082746-v2-356b7a99-synthetic",
+      "method": "full_history",
+      "answer_input_tokens": 8823,
+      "answer_output_tokens": 234,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.7675166666666666
+    },
+    {
+      "run": "20261108-082746-v2-356b7a99-synthetic",
+      "method": "graphiti",
+      "answer_input_tokens": 14589,
+      "answer_output_tokens": 237,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 148.753,
+      "graph_build_calls": 153,
+      "mean_query_seconds": 0.7958333333333334
+    },
+    {
+      "run": "20261108-082746-v2-356b7a99-synthetic",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 8034,
+      "answer_output_tokens": 153,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 148.753,
+      "graph_build_calls": 153,
+      "mean_query_seconds": 0.7504500000000001
+    },
+    {
+      "run": "20261108-083305-v2-ef25e6f5-longmemeval",
+      "method": "full_history",
+      "answer_input_tokens": 168253,
+      "answer_output_tokens": 213,
+      "judge_total_tokens": 3207,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.8907
+    },
+    {
+      "run": "20261108-083305-v2-ef25e6f5-longmemeval",
+      "method": "graphiti",
+      "answer_input_tokens": 7442,
+      "answer_output_tokens": 78,
+      "judge_total_tokens": 3066,
+      "graph_build_seconds": 385.28499999999997,
+      "graph_build_calls": 309,
+      "mean_query_seconds": 0.8264666666666667
+    },
+    {
+      "run": "20261108-083305-v2-ef25e6f5-longmemeval",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 5464,
+      "answer_output_tokens": 65,
+      "judge_total_tokens": 3052,
+      "graph_build_seconds": 385.28499999999997,
+      "graph_build_calls": 309,
+      "mean_query_seconds": 0.8212
+    },
+    {
+      "run": "20261108-084242-v2-2813f162-synthetic",
+      "method": "full_history",
+      "answer_input_tokens": 8823,
+      "answer_output_tokens": 234,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.75955
+    },
+    {
+      "run": "20261108-084242-v2-2813f162-synthetic",
+      "method": "graphiti",
+      "answer_input_tokens": 14676,
+      "answer_output_tokens": 236,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 152.219,
+      "graph_build_calls": 155,
+      "mean_query_seconds": 0.8341500000000001
+    },
+    {
+      "run": "20261108-084242-v2-2813f162-synthetic",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 8055,
+      "answer_output_tokens": 154,
+      "judge_total_tokens": 0,
+      "graph_build_seconds": 152.219,
+      "graph_build_calls": 155,
+      "mean_query_seconds": 0.8438166666666667
+    },
+    {
+      "run": "20261108-084808-v2-759cd0aa-longmemeval",
+      "method": "full_history",
+      "answer_input_tokens": 168253,
+      "answer_output_tokens": 224,
+      "judge_total_tokens": 3218,
+      "graph_build_seconds": 0,
+      "graph_build_calls": 0,
+      "mean_query_seconds": 0.9088333333333334
+    },
+    {
+      "run": "20261108-084808-v2-759cd0aa-longmemeval",
+      "method": "graphiti",
+      "answer_input_tokens": 7725,
+      "answer_output_tokens": 64,
+      "judge_total_tokens": 3051,
+      "graph_build_seconds": 378.584,
+      "graph_build_calls": 309,
+      "mean_query_seconds": 0.9270333333333334
+    },
+    {
+      "run": "20261108-084808-v2-759cd0aa-longmemeval",
+      "method": "no_temporal_metadata",
+      "answer_input_tokens": 5586,
+      "answer_output_tokens": 65,
+      "judge_total_tokens": 3052,
+      "graph_build_seconds": 378.584,
+      "graph_build_calls": 309,
+      "mean_query_seconds": 0.8214333333333333
+    }
+  ]
+}

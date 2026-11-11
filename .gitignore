@@ -11,3 +11,8 @@ results/
 __pycache__/
 *.pyc
 
+# Local per-question and diagnostic details; publish only aggregate summaries.
+artifacts/formal-trial*.json
+artifacts/granularity-pilot-summary.json
+artifacts/granularity-pilot-diagnosis.json
+artifacts/formal-recovery-plan.json
