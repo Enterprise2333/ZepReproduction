@@ -4,7 +4,7 @@ Review date: 2026-11-08. Original remote revision: d7139e26207587a4b210ef5a52a41
 
 ## Scope and status
 
-Phases 1 and 2 repair the experiment harness and re-establish a baseline. No message-level ingestion, larger top-k, embedding change, or source-context fallback has been introduced. V1 outputs remain unchanged. The report PDF still describes the original experiment; this document and the v2 artifacts are the validation supplement until final reporting is regenerated.
+Phases 1 and 2 repair the experiment harness and re-establish a baseline. No message-level ingestion, larger top-k, embedding change, or source-context fallback has been introduced. V1 outputs remain unchanged. This document records the earlier reliability review. The final report and PDF now include the completed message-level experiment.
 
 ## Repairs
 

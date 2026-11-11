@@ -1,6 +1,6 @@
 # Message-level ingestion: implementation and diagnostic pilot
 
-2026-11-10. Development plan steps 1–6 complete. Formal paired three-trial evaluation has NOT started.
+2026-11-10. Development plan steps 1–6 complete. This document records the diagnostic pilot before the completed formal comparison; see the final report for complete results.
 
 ## Implementation
 
@@ -41,4 +41,4 @@ The fixed 30 questions contain 57 sessions and 650 messages. Three trials of BOT
 
 Total roughly 14,504 graph calls and 4.04 construction hours, plus answering/judging and overhead. This is a planning estimate, not a limit or guarantee: graph growth and content affect calls and latency. Graph telemetry records characters, not actual billed input/output/cache tokens, so a reliable currency estimate cannot be derived from these records. Do not equate the 9.88x call ratio with the billing ratio. Exact monetary cost requires provider usage/billing records or additional token instrumentation.
 
-Await approval before the full experiment. Do not tune prompts, top-k or scoring based on these three successes. Report regressions as well as improvements in the full paired comparison.
+The formal experiment is complete. Prompts, top-k and scoring were held fixed. The final report includes regressions as well as improvements.

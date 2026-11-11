@@ -55,4 +55,4 @@ Per-run answer tokens, judge tokens, construction calls/time and query latency a
 
 Eight offline tests pass. Empty-cache model download, subsequent offline readiness and clear failure on an unprepared offline cache were exercised. A complete installation on a second clean machine was not performed.
 
-The historical report PDF is unchanged. This supplement and the updated presentation outline carry the repaired baseline; regenerate the final submission report after the selected modification is evaluated.
+This document records the repaired baseline before the message-level modification. The final `REPORT.md`, `PRESENTATION.md`, and PDF now include the completed modification experiment.
