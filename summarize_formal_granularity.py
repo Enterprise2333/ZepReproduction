@@ -49,7 +49,7 @@ def summarize(folder):
             changes.append(dict(trial=trial,method=method,improved=improved,regressed=regressed))
     results=[dict(mode=k[0],method=k[1],stratum=k[2],trials=v,mean=statistics.mean(x['accuracy'] for x in v),sd=statistics.stdev(x['accuracy'] for x in v)) for k,v in sorted(summary.items())]
     public_protocol={k:v for k,v in protocol.items() if k!='recovery'}
-    output=dict(protocol=public_protocol,stages=stages,results=results,costs=costs,paired_changes=changes,
+    output=dict(protocol=public_protocol,results=results,costs=costs,paired_changes=changes,
         errors=sum('error' in r for rows in runs.values() for r in rows))
     (ROOT/'artifacts/formal-granularity-summary.json').write_text(json.dumps(output,indent=2),encoding='utf-8')
     lines=['# Formal episode-granularity experiment','',

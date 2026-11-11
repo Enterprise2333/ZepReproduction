@@ -1,0 +1,867 @@
+{
+  "protocol": {
+    "source_hashes": {
+      "evaluate.py": "3560432f4e18148d2b1d4ac9b58b08fbbdf76473f5f02309466186e0cb4b4a41",
+      "runtime.py": "56cf561d924caeaa5d39142047bb481c1d4c6f77db4c01c0f170a97e6a2a4e8f",
+      "synthetic.py": "9694254c21f14a0e2f63ec11ae64057b4d8419cfbe46bd2137e456b2c2ca7830"
+    },
+    "expected_ids": [
+      "5c40ec5b",
+      "031748ae",
+      "45dc21b6",
+      "e66b632c",
+      "0977f2af",
+      "50635ada",
+      "2698e78f",
+      "a2f3aa27",
+      "6aeb4375_abs",
+      "9bbe84a2",
+      "gpt4_85da3956",
+      "gpt4_ec93e27f",
+      "gpt4_68e94287",
+      "4dfccbf8",
+      "gpt4_cd90e484",
+      "982b5123",
+      "gpt4_7bc6cf22",
+      "5e1b23de",
+      "2ebe6c90",
+      "982b5123_abs",
+      "73d42213",
+      "61f8c8f8",
+      "a1cc6108",
+      "0ea62687",
+      "60159905",
+      "b3c15d39",
+      "dd2973ad",
+      "2318644b",
+      "2311e44b_abs",
+      "e25c3b8d"
+    ]
+  },
+  "results": [
+    {
+      "mode": "message",
+      "method": "full_history",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "message",
+      "method": "full_history",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.7333333333333333,
+      "sd": 0.0
+    },
+    {
+      "mode": "message",
+      "method": "full_history",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.7037037037037037,
+      "sd": 0.0
+    },
+    {
+      "mode": "message",
+      "method": "graphiti",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "message",
+      "method": "graphiti",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.6333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.6333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.6666666666666666,
+      "sd": 0.05773502691896256
+    },
+    {
+      "mode": "message",
+      "method": "graphiti",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.5925925925925926,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.5925925925925926,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.6296296296296297,
+      "sd": 0.06415002990995845
+    },
+    {
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.5333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.5,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.5,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.5111111111111111,
+      "sd": 0.01924500897298752
+    },
+    {
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.48148148148148145,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.4444444444444444,
+          "coverage": 1.0
+        },
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.4444444444444444,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.4567901234567901,
+      "sd": 0.021383343303319473
+    },
+    {
+      "mode": "session",
+      "method": "full_history",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "session",
+      "method": "full_history",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.7,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.7333333333333333,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.7222222222222222,
+      "sd": 0.01924500897298752
+    },
+    {
+      "mode": "session",
+      "method": "full_history",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.6666666666666666,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.7037037037037037,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.691358024691358,
+      "sd": 0.021383343303319504
+    },
+    {
+      "mode": "session",
+      "method": "graphiti",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "session",
+      "method": "graphiti",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.3,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.26666666666666666,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.23333333333333334,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.26666666666666666,
+      "sd": 0.033333333333333326
+    },
+    {
+      "mode": "session",
+      "method": "graphiti",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.2222222222222222,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.18518518518518517,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.14814814814814814,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.18518518518518517,
+      "sd": 0.037037037037037035
+    },
+    {
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "stratum": "abstention",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 3,
+          "accuracy": 1.0,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 1.0,
+      "sd": 0.0
+    },
+    {
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "stratum": "all",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 30,
+          "accuracy": 0.23333333333333334,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 30,
+          "accuracy": 0.23333333333333334,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 30,
+          "accuracy": 0.23333333333333334,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.23333333333333334,
+      "sd": 0.0
+    },
+    {
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "stratum": "answerable",
+      "trials": [
+        {
+          "trial": 1,
+          "n": 27,
+          "accuracy": 0.14814814814814814,
+          "coverage": 1.0
+        },
+        {
+          "trial": 3,
+          "n": 27,
+          "accuracy": 0.14814814814814814,
+          "coverage": 1.0
+        },
+        {
+          "trial": 2,
+          "n": 27,
+          "accuracy": 0.14814814814814814,
+          "coverage": 1.0
+        }
+      ],
+      "mean": 0.14814814814814814,
+      "sd": 0.0
+    }
+  ],
+  "costs": [
+    {
+      "trial": 1,
+      "mode": "session",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 217,
+      "judge_tokens": 3211,
+      "mean_query_seconds": 0.8125666666666667
+    },
+    {
+      "trial": 1,
+      "mode": "session",
+      "method": "graphiti",
+      "build_calls": 307,
+      "build_seconds": 370.944,
+      "input_tokens": 7633,
+      "output_tokens": 83,
+      "judge_tokens": 3072,
+      "mean_query_seconds": 0.781
+    },
+    {
+      "trial": 1,
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "build_calls": 307,
+      "build_seconds": 370.944,
+      "input_tokens": 5540,
+      "output_tokens": 83,
+      "judge_tokens": 3071,
+      "mean_query_seconds": 0.7355666666666667
+    },
+    {
+      "trial": 3,
+      "mode": "session",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 241,
+      "judge_tokens": 3235,
+      "mean_query_seconds": 0.7358
+    },
+    {
+      "trial": 3,
+      "mode": "session",
+      "method": "graphiti",
+      "build_calls": 309,
+      "build_seconds": 375.843,
+      "input_tokens": 7322,
+      "output_tokens": 71,
+      "judge_tokens": 3060,
+      "mean_query_seconds": 0.7510666666666667
+    },
+    {
+      "trial": 3,
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "build_calls": 309,
+      "build_seconds": 375.843,
+      "input_tokens": 5413,
+      "output_tokens": 70,
+      "judge_tokens": 3059,
+      "mean_query_seconds": 0.8087333333333333
+    },
+    {
+      "trial": 2,
+      "mode": "message",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 227,
+      "judge_tokens": 3221,
+      "mean_query_seconds": 1.0031333333333334
+    },
+    {
+      "trial": 2,
+      "mode": "message",
+      "method": "graphiti",
+      "build_calls": 4584,
+      "build_seconds": 4723.066,
+      "input_tokens": 16158,
+      "output_tokens": 185,
+      "judge_tokens": 3182,
+      "mean_query_seconds": 0.8722666666666666
+    },
+    {
+      "trial": 2,
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "build_calls": 4584,
+      "build_seconds": 4723.066,
+      "input_tokens": 9646,
+      "output_tokens": 116,
+      "judge_tokens": 3110,
+      "mean_query_seconds": 0.7389666666666667
+    },
+    {
+      "trial": 3,
+      "mode": "message",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 210,
+      "judge_tokens": 3204,
+      "mean_query_seconds": 0.7954
+    },
+    {
+      "trial": 3,
+      "mode": "message",
+      "method": "graphiti",
+      "build_calls": 4526,
+      "build_seconds": 5129.856,
+      "input_tokens": 16641,
+      "output_tokens": 155,
+      "judge_tokens": 3152,
+      "mean_query_seconds": 0.7804
+    },
+    {
+      "trial": 3,
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "build_calls": 4526,
+      "build_seconds": 5129.856,
+      "input_tokens": 10001,
+      "output_tokens": 113,
+      "judge_tokens": 3108,
+      "mean_query_seconds": 0.8036
+    },
+    {
+      "trial": 1,
+      "mode": "message",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 221,
+      "judge_tokens": 3215,
+      "mean_query_seconds": 0.8764
+    },
+    {
+      "trial": 1,
+      "mode": "message",
+      "method": "graphiti",
+      "build_calls": 4457,
+      "build_seconds": 4728.081,
+      "input_tokens": 16422,
+      "output_tokens": 128,
+      "judge_tokens": 3124,
+      "mean_query_seconds": 1.0415666666666668
+    },
+    {
+      "trial": 1,
+      "mode": "message",
+      "method": "no_temporal_metadata",
+      "build_calls": 4457,
+      "build_seconds": 4728.081,
+      "input_tokens": 9831,
+      "output_tokens": 130,
+      "judge_tokens": 3123,
+      "mean_query_seconds": 0.8061666666666667
+    },
+    {
+      "trial": 2,
+      "mode": "session",
+      "method": "full_history",
+      "build_calls": 0,
+      "build_seconds": 0,
+      "input_tokens": 168253,
+      "output_tokens": 217,
+      "judge_tokens": 3211,
+      "mean_query_seconds": 0.8631333333333333
+    },
+    {
+      "trial": 2,
+      "mode": "session",
+      "method": "graphiti",
+      "build_calls": 308,
+      "build_seconds": 373.073,
+      "input_tokens": 7655,
+      "output_tokens": 82,
+      "judge_tokens": 3070,
+      "mean_query_seconds": 0.8529666666666667
+    },
+    {
+      "trial": 2,
+      "mode": "session",
+      "method": "no_temporal_metadata",
+      "build_calls": 308,
+      "build_seconds": 373.073,
+      "input_tokens": 5585,
+      "output_tokens": 69,
+      "judge_tokens": 3057,
+      "mean_query_seconds": 0.8717666666666667
+    }
+  ],
+  "paired_changes": [
+    {
+      "trial": 1,
+      "method": "full_history",
+      "improved": [],
+      "regressed": []
+    },
+    {
+      "trial": 1,
+      "method": "graphiti",
+      "improved": [
+        "45dc21b6",
+        "e66b632c",
+        "50635ada",
+        "9bbe84a2",
+        "gpt4_85da3956",
+        "gpt4_68e94287",
+        "gpt4_7bc6cf22",
+        "2ebe6c90",
+        "61f8c8f8",
+        "a1cc6108",
+        "0ea62687",
+        "60159905",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": [
+        "a2f3aa27"
+      ]
+    },
+    {
+      "trial": 1,
+      "method": "no_temporal_metadata",
+      "improved": [
+        "45dc21b6",
+        "e66b632c",
+        "50635ada",
+        "9bbe84a2",
+        "gpt4_68e94287",
+        "61f8c8f8",
+        "0ea62687",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": [
+        "gpt4_ec93e27f"
+      ]
+    },
+    {
+      "trial": 2,
+      "method": "full_history",
+      "improved": [],
+      "regressed": []
+    },
+    {
+      "trial": 2,
+      "method": "graphiti",
+      "improved": [
+        "031748ae",
+        "45dc21b6",
+        "e66b632c",
+        "9bbe84a2",
+        "gpt4_68e94287",
+        "4dfccbf8",
+        "gpt4_7bc6cf22",
+        "5e1b23de",
+        "2ebe6c90",
+        "61f8c8f8",
+        "dd2973ad",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": [
+        "gpt4_ec93e27f"
+      ]
+    },
+    {
+      "trial": 2,
+      "method": "no_temporal_metadata",
+      "improved": [
+        "031748ae",
+        "45dc21b6",
+        "e66b632c",
+        "9bbe84a2",
+        "gpt4_68e94287",
+        "61f8c8f8",
+        "60159905",
+        "dd2973ad",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": [
+        "gpt4_ec93e27f"
+      ]
+    },
+    {
+      "trial": 3,
+      "method": "full_history",
+      "improved": [
+        "4dfccbf8"
+      ],
+      "regressed": []
+    },
+    {
+      "trial": 3,
+      "method": "graphiti",
+      "improved": [
+        "45dc21b6",
+        "e66b632c",
+        "9bbe84a2",
+        "gpt4_68e94287",
+        "gpt4_cd90e484",
+        "gpt4_7bc6cf22",
+        "2ebe6c90",
+        "61f8c8f8",
+        "0ea62687",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": []
+    },
+    {
+      "trial": 3,
+      "method": "no_temporal_metadata",
+      "improved": [
+        "45dc21b6",
+        "e66b632c",
+        "9bbe84a2",
+        "gpt4_68e94287",
+        "61f8c8f8",
+        "0ea62687",
+        "2318644b",
+        "e25c3b8d"
+      ],
+      "regressed": []
+    }
+  ],
+  "errors": 0
+}
