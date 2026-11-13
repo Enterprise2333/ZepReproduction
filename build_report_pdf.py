@@ -17,18 +17,18 @@ SOURCE = ROOT / "REPORT.md"
 OUTPUT = ROOT / "output" / "pdf" / "Zep_Reproducibility_Report.pdf"
 
 BODY = ParagraphStyle(
-    "Body", fontName="Helvetica", fontSize=9.2, leading=13.4, spaceAfter=6, alignment=TA_LEFT
+    "Body", fontName="Helvetica", fontSize=8.8, leading=11.9, spaceAfter=4.5, alignment=TA_LEFT
 )
 TITLE = ParagraphStyle(
     "Title", parent=BODY, fontName="Helvetica-Bold", fontSize=16, leading=20, spaceAfter=13
 )
 H2 = ParagraphStyle(
-    "H2", parent=BODY, fontName="Helvetica-Bold", fontSize=11, leading=15, spaceBefore=12, spaceAfter=5, keepWithNext=True
+    "H2", parent=BODY, fontName="Helvetica-Bold", fontSize=10.5, leading=14, spaceBefore=10, spaceAfter=4, keepWithNext=True
 )
 H3 = ParagraphStyle(
     "H3", parent=BODY, fontName="Helvetica-Bold", fontSize=9.8, leading=13, spaceBefore=9, spaceAfter=4, keepWithNext=True
 )
-SMALL = ParagraphStyle("Small", parent=BODY, fontSize=7.7, leading=10.4, spaceAfter=0)
+SMALL = ParagraphStyle("Small", parent=BODY, fontSize=7.5, leading=9.8, spaceAfter=0)
 
 
 def inline(text):
@@ -122,4 +122,3 @@ def render():
 
 if __name__ == "__main__":
     render()
-
