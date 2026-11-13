@@ -1,88 +1,128 @@
 # Zep / Graphiti temporal memory reproduction
 
-This project is a **local, simplified reproduction** of the main temporal-memory mechanism in [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956). It writes dated conversational episodes to the open-source [Graphiti](https://github.com/getzep/graphiti) engine, retrieves dated facts, and asks the same LLM to answer with (1) the full conversation, (2) Graphiti facts and their validity dates, and (3) the same facts without validity dates.
+This project is a simplified reproduction of the temporal-memory mechanism in [Zep: A Temporal Knowledge Graph Architecture for Agent Memory](https://arxiv.org/abs/2501.13956). It writes dated conversations to the authors' open-source [Graphiti](https://github.com/getzep/graphiti) engine, retrieves graph facts, and compares answers based on full conversation history, dated graph facts, and the same facts with dates hidden.
 
-It is **not** the proprietary Zep service or an exact reproduction of the paper's published scores. Differences include DeepSeek instead of GPT-4o, an English BGE small embedding model instead of BGE-m3, local Kuzu instead of Neo4j, edge-only RRF retrieval instead of the paper's full edge/entity/community context, and a smaller LongMemEval Oracle subset rather than LongMemEval-S. The results therefore test the mechanism, not numeric agreement with the paper.
+The project also tests one modification: writing each message as a separate graph episode instead of writing an entire session as one episode. On a fixed 30-question LongMemEval Oracle subset, the dated graph scored 26.67% with session episodes and 66.67% with message episodes across three paired trials. Graph construction calls increased from 308 to 4,522 per trial on average. See [REPORT.md](REPORT.md) for the experiment design, limitations, and full results.
 
-## Files
+This is not the proprietary Zep service or an exact reproduction of the paper's published benchmark. It uses DeepSeek, a local Kuzu database, BGE-small embeddings, relation-only retrieval, and an Oracle subset that supplies relevant sessions.
 
-- `runtime.py`: DeepSeek client, local embeddings, Kuzu driver, and the workaround for the current Kuzu full-text index setup.
-- `smoke.py`: two-event write/search demonstration.
-- `synthetic.py`: 20 deterministic two-event cases, each with current, historical, and update-date questions.
-- `evaluate.py`: benchmarks and per-question output, including a public LongMemEval Oracle subset.
-- `REPORT.md`: setup, results, and limitations.
-- `environment-lock.txt`: package versions from the tested virtual environment.
-- `PRESENTATION.md`: a 10-12 minute presentation outline using the completed formal comparison.
-- `artifacts/`: compact manifests, summaries, and predictions from the completed runs; public conversation text is excluded.
-- `results/`: generated per-run manifests, predictions, summaries, and Kuzu databases (local only).
-- `graphiti/`: pinned upstream source snapshot at commit `fb60e59d4a208c99e7d0186ee6335d2a257f17f2` (local only).
+## Requirements
 
-## Setup on Windows PowerShell
+- Python 3.12 and Git.
+- Internet access for installation, the first embedding-model download, and DeepSeek API calls.
+- A DeepSeek API key with available usage credit.
+- Enough free disk space for the embedding model, local graph databases, and run outputs.
 
-Use Python 3.12. The current local virtual environment is `.venv`. For a fresh setup:
+The project was tested on Windows. The commands below also show how to set up a standard Python environment on macOS or Linux, but those platforms have not been validated for this exact Graphiti/Kuzu combination. If installation fails, check whether the pinned dependencies provide wheels for your operating system and Python version.
 
-```powershell
-cd D:\Project\ZepReproduction
+## 1. Clone the project and Graphiti
+
+Run these commands in a terminal. They create a new `ZepReproduction` folder under your current directory; no machine-specific path is required.
+
+```sh
+git clone https://github.com/Enterprise2333/ZepReproduction.git
+cd ZepReproduction
 git clone https://github.com/getzep/graphiti.git graphiti
 git -C graphiti checkout fb60e59d4a208c99e7d0186ee6335d2a257f17f2
+```
+
+The Graphiti source snapshot is pinned for reproducibility and is intentionally excluded from this repository. The local `graphiti/` directory must exist before the editable package installation.
+
+## 2. Create an environment and install dependencies
+
+Windows PowerShell:
+
+```powershell
 py -3.12 -m venv .venv
-.\.venv\Scripts\python.exe -m pip install -e "graphiti[kuzu]"
-.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+python -m pip install -e "graphiti[kuzu]"
+python -m pip install -r requirements.txt
+```
+
+macOS or Linux:
+
+```sh
+python3.12 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e "graphiti[kuzu]"
+python -m pip install -r requirements.txt
+```
+
+Run subsequent commands from the project root with this environment active. `environment-lock.txt` records the versions used for the reported experiment; it is an audit record, not an additional install command.
+
+## 3. Configure DeepSeek and prepare embeddings
+
+Copy `.env.example` to `.env` in the project root, then replace `replace_with_your_key` with your own `DEEPSEEK_API_KEY`. Keep the `DEEPSEEK_MODEL=deepseek-chat` line for the reported setup. The `.env` file is ignored by Git; do not commit or share it.
+
+Windows PowerShell:
+
+```powershell
 Copy-Item .env.example .env
-.\.venv\Scripts\python.exe prepare_model.py
+python prepare_model.py
+python prepare_model.py --offline
 ```
 
-Put your `DEEPSEEK_API_KEY` in `.env`. This file is ignored by Git. Run `prepare_model.py` explicitly to download the embedding model into `model_cache/` before evaluation. Evaluation uses only the cache; `prepare_model.py --offline` checks readiness. Use `--cache-dir` to validate a separate empty cache. If the default Hugging Face endpoint is unavailable, set `HF_ENDPOINT=https://hf-mirror.com` for the first download. Later runs use the cached model offline. The source snapshot can be obtained from `https://api.github.com/repos/getzep/graphiti/zipball/fb60e59d4a208c99e7d0186ee6335d2a257f17f2` and extracted to `graphiti/`.
+macOS or Linux:
 
-## Run
+```sh
+cp .env.example .env
+python prepare_model.py
+python prepare_model.py --offline
+```
+
+Edit `.env` before running an API-backed command. The first `prepare_model.py` call downloads `BAAI/bge-small-en-v1.5` into `model_cache/`. The `--offline` call checks that the cache is ready. Evaluation itself uses only this local cache.
+
+## 4. Run checks and examples
+
+```sh
+python -m unittest discover -p "test_*.py"
+python smoke.py
+python evaluate.py --suite synthetic --limit 20
+```
+
+The tests do not need an API key. `smoke.py` and the evaluations call DeepSeek and may incur API charges. The smoke example writes an old fact, updates it, and searches the resulting temporal graph. The synthetic suite covers simple two-event memory cases.
+
+## 5. Run the LongMemEval Oracle comparison
+
+Download the public [LongMemEval Oracle JSON](https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_oracle.json) and save it as `longmemeval_oracle.json` in the project root. For example:
+
+Windows PowerShell:
 
 ```powershell
-.\.venv\Scripts\python.exe smoke.py
-.\.venv\Scripts\python.exe evaluate.py --suite synthetic --limit 20
-.\.venv\Scripts\python.exe evaluate.py --suite longmemeval --limit 10 --seed 5660 --max-chars 30000
+Invoke-WebRequest -Uri "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_oracle.json" -OutFile "longmemeval_oracle.json"
 ```
 
-For LongMemEval, download [the public Oracle JSON](https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_oracle.json) to `longmemeval_oracle.json`. The Oracle dataset provides the relevant sessions for each question; it is materially easier than the original full-history LongMemEval-S task. The script samples at most `--limit` examples from each of `knowledge-update`, `temporal-reasoning`, and `multi-session`, with fixed seed and a context-length ceiling. Selected IDs are written to `manifest.json`.
+macOS or Linux:
 
-Every run creates a dated folder in `results/` with:
-
-- `manifest.json`: input IDs, versions, seed, and settings.
-- `predictions.jsonl`: question, gold answer, prediction, full context used, correctness, retrieval IDs, latency, token usage, ingestion metrics, or an explicit error.
-- `summary.json` and `summary.csv`: accuracy, mean answer latency, and mean answer input tokens by method and question type.
-- The summaries also show retrieval plus answer latency and Graphiti construction cost per case.
-- `graphs/`: a separate Kuzu database per case, so no cross-case memory leaks.
-
-The synthetic scorer uses deterministic answer/date matching. The LongMemEval scorer uses a DeepSeek factual-equivalence judge; this is an extra source of variance and potential bias. All raw answers remain in `predictions.jsonl` for manual auditing. The script writes after each case, so partial runs preserve completed results.
-
-Three complete synthetic trials and one 30-question public Oracle run are exported in `artifacts/`. Use `summarize_run.py` to rebuild summaries from a local JSONL run, and `export_results.py` to refresh the compact tables for the recorded runs.
-
-## Experimental controls
-
-The three answer methods use the same DeepSeek model, temperature, and answer prompt. The ablation reuses the *same retrieved edges* and removes only `valid_at`/`invalid_at` from the constructed context. The full-history baseline includes original episode timestamps. Graph ingestion uses only episode text and timestamps; reference answers and `has_answer` labels are never added to the graph or supplied to the answer model. Public data is sorted by session timestamp before ingestion.
-
-Known upstream compatibility issues in Graphiti 0.31.2: its Kuzu driver's public `build_indices_and_constraints` is a no-op despite search requiring full-text indexes, and the current episode code expects `_database` when `group_id` is supplied. This project calls the driver's maintenance indexing operation directly and uses one database per case without `group_id`. The upstream source snapshot is otherwise unchanged.
-
-## Reliability revision (v2)
-
-Run `python -m unittest discover -p "test_*.py"` and `python audit_previous.py` before experiments. `python validate_baseline.py` runs smoke/pilots followed by three trials per suite and stops on any recorded error. Old runs are preserved. V2 run timestamps are UTC and include unique IDs.
-
-V2 rejects non-boolean judge results and saves raw judgments and usage. Synthetic scoring accepts complete answers and a closed set of category aliases (Project X, X laptop, X gym); negations and alternative answers are rejected. Full-history answers execute independently of the graph. Every planned question/method has a record, including failures. `accuracy` is correct/planned; `scored_accuracy` is correct/scored. Completion rate and scoring coverage must be reported alongside them. Unknown invalidation dates are labelled "not recorded", not confirmed current validity.
-
-Manifests store source/data hashes, answer/judge prompts, provider and decoding settings. Graph top_p remains omitted (provider default), and the model name is a mutable provider alias, not a pinned model revision. Ingestion character counts are proxies, not billable tokens. Judge token usage is separate from answer usage; query timing excludes graph construction and judging.
-
-## Episode granularity modification
-
-The default remains `--episode-granularity session`. Use `--episode-granularity message` only for LongMemEval. Both roles are preserved; each message retains the original session timestamp, role and message index. Writes are sequential; no artificial timestamp offsets are introduced. The full-history answer context is unchanged. Graphiti's default recent-episode context is retained, so the number of messages it covers changes with granularity.
-
-Diagnostic pilot (not a representative accuracy estimate):
-
-```powershell
-.\.venv\Scripts\python.exe evaluate.py --suite longmemeval --limit 10 --case-ids 031748ae,45dc21b6,e66b632c --episode-granularity session
-.\.venv\Scripts\python.exe evaluate.py --suite longmemeval --limit 10 --case-ids 031748ae,45dc21b6,e66b632c --episode-granularity message
+```sh
+curl -L "https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned/resolve/main/longmemeval_oracle.json" -o longmemeval_oracle.json
 ```
 
-Runs use the separate `granularity-v1` name and manifest version. Each successful write is recorded in `ingestion.jsonl` with source identifiers and a body hash. Prediction rows include session/message/episode counts. Do not feed these runs into `aggregate_v2.py`; the archived reliability-v2 summaries are frozen historical artifacts tied to their original source hashes. The 30-question subset contains 57 sessions / 650 messages. Formal paired three-trial execution awaits review of pilot costs.
+Use the same selection settings for the session and message conditions:
 
-## Completed formal comparison
+```sh
+python evaluate.py --suite longmemeval --limit 10 --seed 5660 --max-chars 30000 --episode-granularity session
+python evaluate.py --suite longmemeval --limit 10 --seed 5660 --max-chars 30000 --episode-granularity message
+```
 
-The 30-question Oracle subset was run in three paired trials for session and message ingestion. See `REPORT.md`, `FORMAL_GRANULARITY_RESULTS.md`, the matching simple PDF in `output/pdf/`, and `artifacts/formal-granularity-summary.json`. Each of six conditions has 90 complete prediction records. The public `artifacts/formal-granularity-summary.json` contains aggregate numbers and case IDs. Detailed per-trial predictions, full contexts and local databases remain available locally. The formal dated-graph mean was 26.67% for session ingestion and 66.67% for message ingestion, with substantially more graph-building calls for the latter. These are Oracle subset results under the documented DeepSeek/Kuzu/BGE-small setup, not paper-matched LongMemEval-S scores.
+`--limit 10` selects up to ten questions from each of three question types, for a total of 30 in the reported dataset. The run manifest records the selected IDs, data hash, prompts, model settings, and source version. The two commands each build graphs and make many API calls; the message condition is substantially more expensive. Start with `--limit 1` if you only want to check that the pipeline runs.
+
+Each run creates a timestamped folder under `results/` with a manifest, per-question predictions, summaries, ingestion records, and isolated Kuzu databases. This folder can contain full public conversation contexts and is ignored by Git. The repository's `artifacts/` folder contains the published aggregate experiment results. `FORMAL_GRANULARITY_RESULTS.md` summarizes the completed three-trial comparison.
+
+## How to interpret the results
+
+The three answer methods use the same answer model and prompt. The no-date comparison hides `valid_at` and `invalid_at` only when composing the answer context; it does not build a graph without temporal data. The full-history baseline reads the original dated sessions. The automatic judge is another source of variation. Three trials repeat the same 30 questions and do not represent 90 independent test cases.
+
+Message-level writing preserves user and assistant roles, order, and the original session timestamp. It does not invent time offsets. Graphiti's recent-episode window stays at its default setting, so the effective amount of original conversation in that window changes with episode granularity. Full-history accuracy remained higher than the modified graph on this Oracle subset. The paper's LongMemEval-S scores are reference points, not directly comparable numbers.
+
+## Key files
+
+- `runtime.py`: DeepSeek client, local embedding model, Kuzu setup, and Graphiti integration.
+- `evaluate.py`: question selection, graph ingestion, answering, judging, and run records.
+- `smoke.py` and `synthetic.py`: small temporal-memory checks.
+- `REPORT.md` and `output/pdf/Zep_Reproducibility_Report.pdf`: report and simple PDF.
+- `FORMAL_GRANULARITY_RESULTS.md` and `artifacts/formal-granularity-summary.json`: completed aggregate results.
+- `PRESENTATION.md`: presentation outline.
+
